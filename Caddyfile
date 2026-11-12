@@ -1,0 +1,20 @@
+{
+	admin off
+}
+
+:{$PORT:8080} {
+	root * /srv
+	encode zstd gzip
+
+	# Lets /about work as well as /about.html
+	try_files {path} {path}.html
+
+	header {
+		X-Content-Type-Options nosniff
+		Referrer-Policy strict-origin-when-cross-origin
+	}
+	header /images/* Cache-Control "public, max-age=604800"
+	header /styles.css Cache-Control "public, max-age=86400"
+
+	file_server
+}
