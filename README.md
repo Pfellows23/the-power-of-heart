@@ -64,3 +64,12 @@ site can't check passwords by itself, so the password is set at your host:
 - **Cloudflare Pages** (free): protect `/book-preview.html` with Cloudflare Access.
 - **Netlify**: add password protection for that path in Site settings (paid plans).
 Ask your host or web helper to protect that one page and choose the password.
+
+## Hosting on Railway
+The site deploys to Railway from this GitHub repo. `Dockerfile` and `Caddyfile`
+run a small Caddy web server that serves these files on the port Railway gives
+it, and `railway.json` tells Railway to use them. Pages also work without
+`.html` (for example `/about`). `build.py`, this README, and the server files
+are kept out of the public site.
+
+Every push to `main` redeploys the site automatically.

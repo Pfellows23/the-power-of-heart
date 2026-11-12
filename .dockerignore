@@ -1,0 +1,8 @@
+# Keep source and config files out of the public web folder
+.git
+.github
+Dockerfile
+.dockerignore
+railway.json
+build.py
+README.md
