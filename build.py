@@ -15,7 +15,7 @@ FONTS = "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0
 WAVE = '<svg class="wave{cls}" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0,44 C220,78 460,6 720,30 C980,54 1210,12 1440,38 L1440,80 L0,80 Z"/></svg>'
 def wave(cls=""): return ""
 SHORE = ''
-SIZES = {"coral-heart-in-hand.jpg": (1168, 800), "ocean-sparkle.jpg": (980, 1095), "hendrys-beach.jpg": (2000, 743), "golden-water.jpg": (982, 1236), "sea-foam.jpg": (2000, 1278), "coral-heart-rocks-on-lava.jpg": (1446, 1356), "silver-ocean.jpg": (1452, 1362), "heart-rocks-sandstone.jpg": (1340, 1362), "shoreline-pebbles.jpg": (1452, 1360)}
+SIZES = {"coral-heart-in-hand.jpg": (1168, 800), "ocean-sparkle.jpg": (980, 1095), "hendrys-beach.jpg": (2000, 743), "golden-water.jpg": (982, 1236), "sea-foam.jpg": (2000, 1278), "coral-heart-rocks-on-lava.jpg": (1446, 1356), "silver-ocean.jpg": (1452, 1362), "heart-rocks-sandstone.jpg": (1340, 1362), "shoreline-pebbles.jpg": (1452, 1360), "pamela-sunset-beach.jpg": (720, 900)}
 
 def img(name, alt, cls="", eager=False):
     w, h = SIZES[name]
@@ -190,7 +190,7 @@ home = f'''<section class="hero hero-photo" style="--photo: url('images/ocean-sp
 
 about = f'''<section class="page-hero">
   <div class="wrap split">
-    {img("heart-rocks-sandstone.jpg", "Heart-shaped stones gathered beside a sandstone boulder on the beach")}
+    {img("pamela-sunset-beach.jpg", "Pamela in a woven hat, looking out to sea in golden evening light at Hendry's Beach")}
     <div class="stack">
       <p class="eyebrow">About</p>
       <h1>Hello, I'm Pamela</h1>
