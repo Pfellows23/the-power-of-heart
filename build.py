@@ -3,7 +3,7 @@ import json, os, html
 OUT = os.path.dirname(os.path.abspath(__file__))
 BASE = "https://www.thepowerofheart.com"
 NAME = "The Power of Heart"
-EMAIL = "hello@thepowerofheart.com"
+EMAIL = "pamela@thepowerofheart.com"
 BOOKING = "https://calendly.com/REPLACE-WITH-YOUR-LINK/discovery-call"
 
 MENU = [("Home", "index.html"), ("About", "about.html"), ("Services", "services.html"),
