@@ -25,7 +25,7 @@ the matching Stripe Payment Link in its place:
 - REPLACE_PRODUCT_1, _2, _3: projects.html
 
 ## Booking link
-Search for `REPLACE-WITH-YOUR-LINK` in contact.html and paste your Calendly link.
+Every "Book a discovery call" button opens https://calendly.com/pamela-thepowerofheart/30min. To change it, edit BOOKING at the top of build.py and run it.
 
 ## Menu
 The menu sits between `<!-- MENU START -->` and `<!-- MENU END -->` at the top

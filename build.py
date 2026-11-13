@@ -4,7 +4,7 @@ OUT = os.path.dirname(os.path.abspath(__file__))
 BASE = "https://www.thepowerofheart.com"
 NAME = "The Power of Heart"
 EMAIL = "pamela@thepowerofheart.com"
-BOOKING = "https://calendly.com/REPLACE-WITH-YOUR-LINK/discovery-call"
+BOOKING = "https://calendly.com/pamela-thepowerofheart/30min"
 
 MENU = [("Home", "index.html"), ("About", "about.html"), ("Services", "services.html"),
         ("Projects", "projects.html"), ("Inspirations", "inspirations.html")]
@@ -43,7 +43,7 @@ def header(slug):
       <ul>
 {items}
       </ul>
-      <a class="btn btn-small" href="contact.html#book">Book a discovery call</a>
+      <a class="btn btn-small" href="{BOOKING}" target="_blank" rel="noopener">Book a discovery call</a>
     </nav>
     <!-- MENU END -->
   </div>
@@ -119,7 +119,7 @@ CTA = f'''{FOAM}
       <h2>Book a free discovery call</h2>
       <p>A relaxed conversation about where you are, where you want to go, and whether working together feels right.</p>
     </div>
-    <a class="btn" href="contact.html#book">Choose a time</a>
+    <a class="btn" href="{BOOKING}" target="_blank" rel="noopener">Choose a time</a>
   </div>
 </section>'''
 
@@ -131,7 +131,7 @@ home = f'''<section class="hero hero-photo" style="--photo: url('images/ocean-sp
       <h1>Live from the <em>wisdom of your heart</em></h1>
       <p class="lede">The Power of Heart works with individual clients on inner alignment. Heart-focused coaching empowers you in every area of life and along your path of purpose, connecting you with peace, fulfillment, joy, clarity, and abundance.</p>
       <div class="actions">
-        <a class="btn" href="contact.html#book">Book a discovery call</a>
+        <a class="btn" href="{BOOKING}" target="_blank" rel="noopener">Book a discovery call</a>
         <a class="btn btn-ghost" href="services.html">Explore services</a>
       </div>
     </div>
@@ -197,7 +197,7 @@ about = f'''<section class="page-hero">
       <p class="lede">I help people come home to their hearts, and live and work from there.</p>
       <p>[Your About page copy from the current site goes here, word for word.]</p>
       <div class="actions">
-        <a class="btn" href="contact.html#book">Book a discovery call</a>
+        <a class="btn" href="{BOOKING}" target="_blank" rel="noopener">Book a discovery call</a>
         <a class="btn btn-ghost" href="projects.html">See my projects</a>
       </div>
     </div>
@@ -248,7 +248,7 @@ services = f'''<section class="page-hero">
       <p>[Coaching copy from your current Products &amp; Programs page.]</p>
     </div>
     <div class="products">
-{product("Discovery Call", "30 minutes · Zoom or phone", "Free", "A first conversation to see if we are a good fit.", "", "Book a time").replace(stripe(""), "contact.html#book")}
+{product("Discovery Call", "30 minutes · Zoom or phone", "Free", "A first conversation to see if we are a good fit.", "", "Book a time").replace(stripe(""), BOOKING)}
 {product("Single Coaching Session", "[Length]", "[$ Price]", "[Description from your current site.]", "SINGLE_SESSION", "Book &amp; pay")}
 {product("Coaching Package", "[Number of sessions]", "[$ Price]", "[Description from your current site.]", "COACHING_PACKAGE", "Book &amp; pay")}
     </div>
@@ -354,7 +354,7 @@ contact = f'''<section class="page-hero" id="book">
     <div class="booking-box">
       <h2>Book a discovery call</h2>
       <p>Pick a time that works for you. You will get a confirmation email with the details.</p>
-      <a class="btn" href="{BOOKING}" rel="noopener">Open the booking calendar</a>
+      <a class="btn" href="{BOOKING}" target="_blank" rel="noopener">Open the booking calendar</a>
       <p class="muted">Or write to <a href="mailto:{EMAIL}">{EMAIL}</a></p>
     </div>
   </div>
