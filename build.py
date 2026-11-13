@@ -192,8 +192,7 @@ about = f'''<section class="page-hero">
   <div class="wrap split">
     {img("pamela-sunset-beach.jpg", "Pamela in a woven hat, looking out to sea in golden evening light at Hendry's Beach")}
     <div class="stack">
-      <p class="eyebrow">About</p>
-      <h1>Hello, I'm Pamela</h1>
+      <h1>Hello and welcome</h1>
       <p class="lede">My work is about the journey of the soul, and fulfilling the dharma and life purposes we are each here to fulfill.</p>
       <p>My coaching brings together everything I have lived and studied: leadership training, a Women's Energetics certification, more than 1,000 hours of RYT yoga certification, over ten years of teaching meditation and chakra meditation, and my years as a graduate of the Meisner Technique Acting Studio. Each one taught me a different way of listening, to the body, to energy, to truth in the moment, and to what a person is really here to do.</p>
       <div class="actions">
