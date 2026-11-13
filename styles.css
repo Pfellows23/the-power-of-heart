@@ -489,3 +489,5 @@ h3 { font-weight: 400; font-size: 1.55rem; }
 @media (min-width: 801px) { .hero-cover { align-self: start; margin-top: -2.5rem; } }
 @media (min-width: 801px) { .hero-cover { margin-top: 4.5rem; } }
 @media (min-width: 801px) { .hero-cover { width: calc(100% + 18vw); max-width: 66rem; margin-right: -14vw; margin-left: -4vw; margin-top: 3rem; } }
+h2 em { font-family: var(--font-voice); font-style: italic; color: var(--tide); }
+.quote .eyebrow { margin-bottom: 0.25rem; }
