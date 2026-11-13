@@ -492,3 +492,8 @@ h3 { font-weight: 400; font-size: 1.55rem; }
 h2 em { font-family: var(--font-voice); font-style: italic; color: var(--tide); }
 .quote .eyebrow { margin-bottom: 0.25rem; }
 .offers > .offer:last-child:nth-child(odd) { grid-column: 1 / -1; }
+
+/* Home: mindfulness to heartfulness */
+.heartfulness .measure { margin-inline: auto; text-align: center; }
+@media (min-width: 900px) { .heartfulness .offers { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 900px) { .heartfulness .offers > .offer:last-child { grid-column: auto; } .heartfulness .offer { padding-right: 2rem; } }
