@@ -295,7 +295,6 @@ services = f'''<section class="page-hero">
     <p class="eyebrow">Services</p>
     <h1>Coaching and teaching from the heart</h1>
     <p class="lede">Heart-focused coaching and spiritual teaching for individual clients, to bring you into inner alignment and empower you along your path of purpose.</p>
-    {PILLARS}
   </div>
   {REEL}
 </section>
