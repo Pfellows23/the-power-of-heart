@@ -281,11 +281,13 @@ def product(title, meta, price, text, key, label="Buy now", photo=None):
       </article>'''
 
 REEL_FRAMES = [("ocean-sparkle.jpg", "Sunlight sparkling on the ocean"), ("coral-heart-in-hand.jpg", "A heart-shaped piece of coral held in a hand"), ("golden-water.jpg", "Golden evening light on gentle waves"), ("sea-foam.jpg", "White sea foam on the sand"), ("heart-rocks-sandstone.jpg", "Heart-shaped stones beside a sandstone boulder"), ("silver-ocean.jpg", "Silver light on the open ocean"), ("shoreline-pebbles.jpg", "Pebbles along the shoreline")]
-def _frames(hidden):
-    return "".join(f'<img src="images/{n}" alt="{"" if hidden else a}" width="230" height="150" loading="lazy" decoding="async">' for n, a in REEL_FRAMES)
-REEL = f'''<figure class="reel">
-  <div class="reel-strip"><div class="reel-track">{_frames(False)}<span aria-hidden="true">{_frames(True)}</span></div></div>
-  <figcaption class="reel-line">We all want to see our most <em>authentic story</em> play out.</figcaption>
+def _frames():
+    return "".join(f'<img src="images/{n}" alt="{a}" width="800" height="600" style="--i:{i}" decoding="async">' for i, (n, a) in enumerate(REEL_FRAMES))
+REEL = f'''<figure class="screen-wrap">
+  <div class="screen">
+    {_frames()}
+    <figcaption class="screen-line">We all want to see our most <em>authentic story</em> play out.</figcaption>
+  </div>
 </figure>'''
 
 services = f'''<section class="page-hero">
