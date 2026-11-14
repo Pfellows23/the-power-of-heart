@@ -55,7 +55,7 @@ def footer():
   <div class="footer-inner">
     <div>
       <p class="footer-name">{NAME}</p>
-      <p class="footer-tag">Heart-focused coaching, spiritual teaching, creative projects, and The Hearts of… book series.</p>
+      <p class="footer-tag">Coaching and spiritual teaching rooted in ancient lineages, creative projects, and The Hearts of… book series.</p>
     </div>
     <nav class="footer-links" aria-label="Footer">
 {links}
@@ -128,7 +128,7 @@ PILLARS = '<ul class="pillars" aria-label="What clients move toward"><li>Peace</
 home = f'''<section class="hero hero-photo" style="--photo: url('images/ocean-sparkle.jpg')">
   <div class="wrap hero-grid">
     <div class="hero-text stack-lg">
-      <h1>Live from the <em>wisdom of your heart</em></h1>
+      <h1>Ancient wisdom.<br><em>Undiscovered power.</em></h1>
     </div>
     <a class="hero-cover" href="projects.html" aria-label="The Hearts of Mauna Kea book">
       {img("coral-heart-in-hand.jpg", "The Hearts of Mauna Kea: a heart-shaped piece of coral held on a sandy beach")}
@@ -137,7 +137,7 @@ home = f'''<section class="hero hero-photo" style="--photo: url('images/ocean-sp
 </section>
 <div class="hero-after">
   <div class="wrap">
-    <p class="lede">Heart-focused coaching for inner alignment, empowering you in every area of life and along your path of purpose.</p>
+    <p class="lede">Coaching rooted in lineages thousands of years old, for the power most of modern life has left undiscovered: the intelligence of the heart.</p>
     <div class="actions">
       <a class="btn" href="{BOOKING}" target="_blank" rel="noopener">Book a discovery call</a>
       <a class="btn btn-ghost" href="services.html">Explore services</a>
@@ -149,10 +149,10 @@ home = f'''<section class="hero hero-photo" style="--photo: url('images/ocean-sp
   <div class="wrap stack-lg">
     <div class="stack measure">
       <p class="eyebrow">Why the heart</p>
-      <h2>From mindfulness to <em>heartfulness</em></h2>
-      <p class="lede">Mindfulness taught us to watch the mind and find stillness. Heartfulness is the next step: living from the place in us that already knows.</p>
-      <p>The heart is more than a feeling. It is a center of intelligence, where love, intuition, courage, and truth meet. The mind can analyze a life, but only the heart can tell you whether it is yours. When we lead from the heart, decisions become clearer, relationships become more honest, and purpose stops being something to chase and becomes something to live.</p>
-      <p>This has never been more important. In a world that is louder, faster, and more divided than ever, a quiet mind is no longer enough. What we need now is the coherence, compassion, and connection that the heart brings, in ourselves first and then in everything we touch.</p>
+      <h2>The oldest intelligence <em>we have</em></h2>
+      <p class="lede">Long before anyone studied the mind, the great wisdom traditions pointed to the heart as the seat of knowing. Most of us were never taught how to use it.</p>
+      <p>This is not sentiment. The heart is a center of intelligence, where intuition, courage, and truth meet. The mind can analyze a life, but only the heart can tell you whether it is yours. When it leads, decisions become clear, relationships become honest, and purpose stops being something to chase and becomes something to live.</p>
+      <p>Mindfulness taught a generation to quiet the mind. Heartfulness is the next step, and it has never mattered more. In a world that is louder, faster, and more divided than ever, a quiet mind is no longer enough. The power these traditions have guarded all along is still waiting to be discovered.</p>
     </div>
   </div>
 </section>
@@ -165,8 +165,8 @@ home = f'''<section class="hero hero-photo" style="--photo: url('images/ocean-sp
     </div>
     <div class="paths">
       <article class="path">
-        <h3>Heart-Focused Coaching</h3>
-        <p>One-to-one sessions for inner alignment, so the choices you make each day match what your heart already knows.</p>
+        <h3>Alignment Coaching</h3>
+        <p>One-to-one work, grounded in ancient practice, to bring the way you live into line with what you most deeply know.</p>
         <a class="more" href="services.html#coaching">Coaching services</a>
       </article>
       <article class="path">
@@ -221,7 +221,7 @@ about = f'''<section class="page-hero about-hero">
   <div class="wrap stack-lg">
     <div class="stack measure">
       <p class="eyebrow">The lineages behind this work</p>
-      <h2>Many traditions, one heart</h2>
+      <h2>Many lineages, one truth</h2>
     </div>
     <div class="offers">
       <div class="offer"><h3>Acting</h3><p>A graduate of the Meisner Technique Acting Studio, where the practice is presence itself: listening fully and responding truthfully, moment to moment.</p></div>
@@ -500,7 +500,7 @@ inspirations = f'''<section class="page-hero">
   <div class="wrap stack measure">
     <p class="eyebrow">Inspirations</p>
     <h1>Inspirations for <em>a soul-aligned life</em></h1>
-    <p class="lede">Heart rocks, wisdom teachings, film, and reflections gathered along the way. Take what speaks to your heart.</p>
+    <p class="lede">Heart rocks, wisdom teachings, film, and reflections gathered along the way. Take what speaks to you.</p>
   </div>
 </section>
 
@@ -550,7 +550,7 @@ inspirations = f'''<section class="page-hero">
   <div class="wrap stack-lg">
     <div class="stack measure">
       <p class="eyebrow">Reflections</p>
-      <h2>Notes from the heart</h2>
+      <h2>Notes from the path</h2>
       <p>[Short reflections, meditations, or journal entries. Each can become its own page later.]</p>
     </div>
     <div class="offers">
@@ -621,10 +621,10 @@ book_preview = f'''<section class="section book">
 </section>'''
 
 pages = [
-    ("index.html", "The Power of Heart | Heart-Focused Coaching & Spiritual Teaching",
-     "Heart-focused alignment coaching and spiritual teaching for peace, fulfillment, joy, clarity, and abundance. Home of The Hearts of Mauna Kea book.", home, ORG),
+    ("index.html", "The Power of Heart | Alignment Coaching & Spiritual Teaching",
+     "Alignment coaching and spiritual teaching rooted in ancient lineages of yoga, meditation, and Buddhism. Home of The Hearts of Mauna Kea book.", home, ORG),
     ("about.html", "About Pamela | The Power of Heart",
-     "Meet Pamela: heart-focused coach drawing on leadership training, Women's Energetics, 1,000+ hours of yoga certification, and the Meisner Technique.", about, None),
+     "Meet Pamela: alignment coach drawing on leadership training, Women's Energetics, 1,000+ hours of yoga certification, and the Meisner Technique.", about, None),
     ("services.html", "Coaching & Spiritual Teaching Services | The Power of Heart",
      "Inner alignment coaching sessions, packages, and spiritual teaching programs. Book a free discovery call or pay securely online.", services, services_schema),
     ("projects.html", "The Hearts of Mauna Kea Book & Creative Projects | The Power of Heart",

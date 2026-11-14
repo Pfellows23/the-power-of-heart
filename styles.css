@@ -609,7 +609,7 @@ h2 em { font-family: var(--font-voice); font-style: italic; color: var(--tide); 
 }
 @media (min-width: 801px) {
   .hero-photo { background-image:
-    radial-gradient(ellipse 34% 46% at 12% 92%, color-mix(in srgb, var(--salt) 92%, transparent) 0%, color-mix(in srgb, var(--salt) 70%, transparent) 45%, color-mix(in srgb, var(--salt) 0%, transparent) 100%),
+    radial-gradient(ellipse 48% 44% at 14% 94%, color-mix(in srgb, var(--salt) 92%, transparent) 0%, color-mix(in srgb, var(--salt) 70%, transparent) 45%, color-mix(in srgb, var(--salt) 0%, transparent) 100%),
     linear-gradient(0deg, var(--salt) 0%, color-mix(in srgb, var(--salt) 0%, transparent) 12%),
     var(--photo, none), var(--beach-wash); }
 }
@@ -617,3 +617,4 @@ h2 em { font-family: var(--font-voice); font-style: italic; color: var(--tide); 
 .film-feature .film-frame { border-radius: 18px; box-shadow: 0 0 60px 4px rgba(255, 226, 170, 0.28), 0 30px 60px -30px rgba(42,46,47,.55); }
 .film-feature h3 { font-size: var(--step-2, 1.9rem); margin-top: 1.25rem; text-align: center; }
 .film-feature p { text-align: center; }
+@media (min-width: 801px) { .hero-photo .hero-text { max-width: none; position: relative; z-index: 2; } .hero-photo h1 { white-space: nowrap; } }
