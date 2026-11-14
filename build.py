@@ -292,7 +292,7 @@ services = f'''<section class="page-hero">
   <div class="wrap stack measure">
     <p class="eyebrow">Services</p>
     <h1>Live your life <em>aligned</em></h1>
-    <p class="lede">Heart-focused coaching and spiritual teaching for individual clients, to bring you into inner alignment and empower you along your path of purpose.</p>
+    <p class="lede">Specialized coaching and spiritual teaching for individual clients, to bring you into inner alignment and empower you along your path of purpose.</p>
   </div>
   {REEL}
 </section>
@@ -303,7 +303,7 @@ services = f'''<section class="page-hero">
       <h2>The mind can only take you <em>so far</em></h2>
       <p class="lede">After that, how fulfilled you feel in your life comes down to the heart.</p>
       <p>The mind is a brilliant tool. It can plan, solve, and achieve. But it does not drive itself. What moves it is something deeper: what resonates with you, what you love, what feels true. For too long that has been overlooked, and it is why so many people reach their goals and still feel that something is missing.</p>
-      <p>Heart-focused coaching begins there. Together we listen for what truly resonates, and empower what drives the mind, so your choices, your work, and your relationships line up with who you really are.</p>
+      <p>Specialized coaching begins there. Together we listen for what truly resonates, and empower what drives the mind, so your choices, your work, and your relationships line up with who you really are.</p>
     </div>
     <div class="products">
 {product("Discovery Call", "30 minutes · Zoom or phone", "Free", "A first conversation to see if we are a good fit.", "", "Book a time").replace(stripe(""), BOOKING)}
