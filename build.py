@@ -465,6 +465,24 @@ def rock(cls, place, note):
         <figcaption><p>{note}</p></figcaption>
       </figure>'''
 
+# Film clips on the Inspirations page. Paste a YouTube link in place of "" to show the video.
+FILMS = [
+    ("Roberto Benigni on the Ten Commandments", "[A line or two on why this clip moves you.]", ""),
+    ("[Film title and scene]", "[A line or two on what this scene teaches.]", ""),
+]
+def film(title, note, url):
+    import re
+    m = re.search(r"(?:v=|youtu\.be/|embed/|shorts/)([\w-]{11})", url or "")
+    if m:
+        frame = f'<iframe src="https://www.youtube-nocookie.com/embed/{m.group(1)}" title="{title}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>'
+    else:
+        frame = '<p class="film-soon">Clip coming soon</p>'
+    return f'''      <article class="film">
+        <div class="film-frame">{frame}</div>
+        <h3>{title}</h3>
+        <p>{note}</p>
+      </article>'''
+
 def teaching(text, place):
     return f'''      <div class="teaching">
         <blockquote>{text}</blockquote>
@@ -474,8 +492,8 @@ def teaching(text, place):
 inspirations = f'''<section class="page-hero">
   <div class="wrap stack measure">
     <p class="eyebrow">Inspirations</p>
-    <h1>Gifts from <em>the shore and the mountain</em></h1>
-    <p class="lede">Heart rocks, wisdom teachings, and reflections gathered along the way, from Mauna Kea to Hendry's Beach. Take what speaks to your heart.</p>
+    <h1>Inspirations for <em>a heart-led life</em></h1>
+    <p class="lede">Heart rocks, wisdom teachings, film, and reflections gathered along the way. Take what speaks to your heart.</p>
   </div>
 </section>
 
@@ -509,7 +527,20 @@ inspirations = f'''<section class="page-hero">
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="film">
+  <div class="wrap stack-lg">
+    <div class="stack measure">
+      <p class="eyebrow">Film</p>
+      <h2>Film as <em>a teacher of life</em></h2>
+      <p>A great film can show us ourselves in two hours: what we love, what we fear, and what we are capable of. Storytelling is one of the oldest ways the heart has learned, and it is an art worth preserving. These are scenes I return to.</p>
+    </div>
+    <div class="films">
+{chr(10).join(film(*f) for f in FILMS)}
+    </div>
+  </div>
+</section>
+
+<section class="section section-sand">
   <div class="wrap stack-lg">
     <div class="stack measure">
       <p class="eyebrow">Reflections</p>
