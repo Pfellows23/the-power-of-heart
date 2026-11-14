@@ -574,3 +574,12 @@ h2 em { font-family: var(--font-voice); font-style: italic; color: var(--tide); 
   .hero-cover .photo { aspect-ratio: 4 / 3; }
 }
 .hero-photo .lede { color: var(--basalt); }
+
+/* Home hero: stronger words, quieter buttons */
+.hero-photo .hero-text { max-width: 31rem; }
+.hero-photo h1 { font-size: clamp(2.7rem, 4.7vw, 4.4rem); font-weight: 400; line-height: 1.04; }
+.hero-photo h1 em { font-weight: 400; }
+.hero-photo .lede { font-size: 1.2rem; font-weight: 400; }
+.hero-photo .actions { gap: 0.6rem; flex-wrap: wrap; }
+.hero-photo .actions .btn { padding: 0.6rem 1.15rem; font-size: 0.68rem; letter-spacing: 0.16em; min-height: 0; }
+@media (min-width: 801px) { .hero-photo .hero-grid { grid-template-columns: 0.78fr 1.22fr; } .hero-cover { margin-left: -6vw; } }
