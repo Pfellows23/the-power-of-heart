@@ -15,7 +15,7 @@ FONTS = "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0
 WAVE = '<svg class="wave{cls}" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0,44 C220,78 460,6 720,30 C980,54 1210,12 1440,38 L1440,80 L0,80 Z"/></svg>'
 def wave(cls=""): return ""
 SHORE = ''
-SIZES = {"coral-heart-in-hand.jpg": (1168, 800), "ocean-sparkle.jpg": (980, 1095), "hendrys-beach.jpg": (2000, 743), "golden-water.jpg": (982, 1236), "sea-foam.jpg": (2000, 1278), "coral-heart-rocks-on-lava.jpg": (1446, 1356), "silver-ocean.jpg": (1452, 1362), "heart-rocks-sandstone.jpg": (1340, 1362), "shoreline-pebbles.jpg": (1452, 1360), "pamela-sunset-beach.jpg": (720, 900)}
+SIZES = {"coral-heart-in-hand.jpg": (1168, 800), "ocean-sparkle.jpg": (980, 1095), "hendrys-beach.jpg": (2000, 743), "golden-water.jpg": (982, 1236), "sea-foam.jpg": (2000, 1278), "coral-heart-rocks-on-lava.jpg": (1446, 1356), "silver-ocean.jpg": (1452, 1362), "heart-rocks-sandstone.jpg": (1340, 1362), "shoreline-pebbles.jpg": (1452, 1360), "pamela-sunset-beach.jpg": (720, 900), "hearts-of-hendrys-cover.jpg": (1016, 762)}
 
 def img(name, alt, cls="", eager=False):
     w, h = SIZES[name]
@@ -374,6 +374,34 @@ projects = f'''<section class="page-hero">
   </div>
 </section>
 {wave("wave-flip")}
+
+<section class="section" id="hearts-of-hendrys">
+  <div class="wrap stack-lg">
+    <div class="stack measure">
+      <p class="eyebrow">Projects</p>
+      <h2 class="h1-size">Hearts of Hendry's</h2>
+      <p class="lede">Listening from the Beach. [A sentence or two introducing the book.]</p>
+    </div>
+    <div class="split">
+      {img("hearts-of-hendrys-cover.jpg", "Hearts of Hendry's, Listening from the Beach: book cover showing a heart-shaped stone held up against a sunset over the ocean", "book-cover")}
+      <div class="stack">
+        <p class="eyebrow">Book two of The Hearts of… series</p>
+        <h3 class="h2-size">About the book</h3>
+        <p>[Book description.]</p>
+        <dl class="field-note">
+          <dt>Format</dt><dd>[Hardcover · pages]</dd>
+          <dt>Price</dt><dd>[$ Price] plus shipping</dd>
+          <dt>Place</dt><dd>Hendry's Beach, Santa Barbara, California</dd>
+        </dl>
+        <div class="actions">
+          <a class="btn" href="{stripe("BOOK_HEARTS_OF_HENDRYS")}">Buy the book</a>
+        </div>
+        <p class="secure-note">Payments are processed securely by Stripe.</p>
+      </div>
+    </div>
+  </div>
+</section>
+{HENDRY}
 
 <section class="section">
   <div class="wrap stack-lg">
