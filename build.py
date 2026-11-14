@@ -280,6 +280,14 @@ def product(title, meta, price, text, key, label="Buy now", photo=None):
         <a class="btn" href="{stripe(key)}">{label}</a>
       </article>'''
 
+REEL_FRAMES = [("ocean-sparkle.jpg", "Sunlight sparkling on the ocean"), ("coral-heart-in-hand.jpg", "A heart-shaped piece of coral held in a hand"), ("golden-water.jpg", "Golden evening light on gentle waves"), ("sea-foam.jpg", "White sea foam on the sand"), ("heart-rocks-sandstone.jpg", "Heart-shaped stones beside a sandstone boulder"), ("silver-ocean.jpg", "Silver light on the open ocean"), ("shoreline-pebbles.jpg", "Pebbles along the shoreline")]
+def _frames(hidden):
+    return "".join(f'<img src="images/{n}" alt="{"" if hidden else a}" width="230" height="150" loading="lazy" decoding="async">' for n, a in REEL_FRAMES)
+REEL = f'''<figure class="reel">
+  <div class="reel-strip"><div class="reel-track">{_frames(False)}<span aria-hidden="true">{_frames(True)}</span></div></div>
+  <figcaption class="reel-line">We all want to see our most <em>authentic story</em> play out.</figcaption>
+</figure>'''
+
 services = f'''<section class="page-hero">
   <div class="wrap stack measure">
     <p class="eyebrow">Services</p>
@@ -287,6 +295,7 @@ services = f'''<section class="page-hero">
     <p class="lede">Heart-focused coaching and spiritual teaching for individual clients, to bring you into inner alignment and empower you along your path of purpose.</p>
     {PILLARS}
   </div>
+  {REEL}
 </section>
 
 <section class="section" id="coaching" style="padding-top:0">
