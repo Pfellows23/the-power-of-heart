@@ -525,7 +525,7 @@ h2 em { font-family: var(--font-voice); font-style: italic; color: var(--tide); 
 /* About: portrait sits high, intro text wraps around it */
 .about-hero { padding-top: clamp(1.25rem, 3vw, 2rem); }
 .about-hero .wrap::after { content: ""; display: block; clear: both; }
-.about-hero .photo { float: left; width: min(40%, 380px); margin: 0 clamp(1.5rem, 4vw, 3rem) 1rem 0; }
+.about-hero .photo { float: left; width: min(44%, 470px); margin: 0 clamp(1.5rem, 4vw, 3.25rem) 1rem 0; }
 .about-intro { display: block; }
 .about-intro > * + * { margin-top: 1.1rem; }
 .about-intro h1 { padding-top: 0.5rem; }
