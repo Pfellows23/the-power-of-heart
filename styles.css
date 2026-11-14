@@ -618,3 +618,6 @@ h2 em { font-family: var(--font-voice); font-style: italic; color: var(--tide); 
 .film-feature h3 { font-size: var(--step-2, 1.9rem); margin-top: 1.25rem; text-align: center; }
 .film-feature p { text-align: center; }
 @media (min-width: 801px) { .hero-photo .hero-text { max-width: none; position: relative; z-index: 2; } .hero-photo h1 { white-space: nowrap; } }
+
+/* Home: Pamela's opening line */
+.thread-line { font-family: var(--font-voice, var(--font-display)); font-style: italic; font-weight: 300; font-size: clamp(1.5rem, 3vw, 2.15rem); line-height: 1.3; color: var(--tide); margin-bottom: clamp(1.5rem, 4vw, 2.75rem); padding-bottom: clamp(1.5rem, 4vw, 2.75rem); border-bottom: 1px solid color-mix(in srgb, var(--driftwood) 30%, transparent); }
