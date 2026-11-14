@@ -492,7 +492,7 @@ def teaching(text, place):
 inspirations = f'''<section class="page-hero">
   <div class="wrap stack measure">
     <p class="eyebrow">Inspirations</p>
-    <h1>Inspirations for <em>a heart-led life</em></h1>
+    <h1>Inspirations for <em>a soul-aligned life</em></h1>
     <p class="lede">Heart rocks, wisdom teachings, film, and reflections gathered along the way. Take what speaks to your heart.</p>
   </div>
 </section>
