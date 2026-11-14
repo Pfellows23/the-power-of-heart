@@ -205,13 +205,14 @@ home = f'''<section class="hero hero-photo" style="--photo: url('images/ocean-sp
 </section>
 {CTA}'''
 
-about = f'''<section class="page-hero">
-  <div class="wrap split">
+about = f'''<section class="page-hero about-hero">
+  <div class="wrap">
     {img("pamela-sunset-beach.jpg", "Pamela in a woven hat, looking out to sea in golden evening light at Hendry's Beach")}
-    <div class="stack">
+    <div class="about-intro">
       <h1>Hello and welcome</h1>
       <p class="lede">My work serves the journey of the soul: helping you live the dharma and the purpose you came here to fulfill.</p>
       <p>Everything I offer was first given to me. My coaching draws on years of study with lineage holders across acting, leadership, transformation, yoga, meditation, and Buddhism. Each tradition opened a different doorway into the same truth, and together they shape how I listen, how I guide, and how I walk beside the people I work with.</p>
+      <p>I have been a student of teachers who carry living lineages, each one handed down from teacher to student over generations. This is the ground my coaching stands on.</p>
       <div class="actions">
         <a class="btn" href="{BOOKING}" target="_blank" rel="noopener">Book a discovery call</a>
         <a class="btn btn-ghost" href="services.html">Explore services</a>
@@ -225,7 +226,6 @@ about = f'''<section class="page-hero">
     <div class="stack measure">
       <p class="eyebrow">The lineages behind this work</p>
       <h2>Many traditions, one heart</h2>
-      <p>I have been a student of teachers who carry living lineages, each one handed down from teacher to student over generations. This is the ground my coaching stands on.</p>
     </div>
     <div class="offers">
       <div class="offer"><h3>Acting</h3><p>A graduate of the Meisner Technique Acting Studio, where the practice is presence itself: listening fully and responding truthfully, moment to moment.</p></div>
