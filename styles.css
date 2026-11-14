@@ -613,3 +613,7 @@ h2 em { font-family: var(--font-voice); font-style: italic; color: var(--tide); 
     linear-gradient(0deg, var(--salt) 0%, color-mix(in srgb, var(--salt) 0%, transparent) 12%),
     var(--photo, none), var(--beach-wash); }
 }
+.film-feature { max-width: 62rem; margin-inline: auto; width: 100%; }
+.film-feature .film-frame { border-radius: 18px; box-shadow: 0 0 60px 4px rgba(255, 226, 170, 0.28), 0 30px 60px -30px rgba(42,46,47,.55); }
+.film-feature h3 { font-size: var(--step-2, 1.9rem); margin-top: 1.25rem; text-align: center; }
+.film-feature p { text-align: center; }

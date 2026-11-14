@@ -471,14 +471,20 @@ FILMS = [
     ("Roberto Benigni on the Ten Commandments", "[A line or two on why this clip moves you.]", "https://youtu.be/EatwzkvOWf4"),
     ("[Film title and scene]", "[A line or two on what this scene teaches.]", ""),
 ]
-def film(title, note, url):
+def more_films():
+    rest = [f for f in FILMS[1:] if f[2]]
+    if not rest: return ""
+    return '    <div class="films">\n' + chr(10).join(film(*f) for f in rest) + '\n    </div>'
+
+def film(title, note, url, feature=False):
     import re
     m = re.search(r"(?:v=|youtu\.be/|embed/|shorts/)([\w-]{11})", url or "")
     if m:
         frame = f'<iframe src="https://www.youtube-nocookie.com/embed/{m.group(1)}" title="{title}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>'
     else:
         frame = '<p class="film-soon">Clip coming soon</p>'
-    return f'''      <article class="film">
+    cls = "film film-feature" if feature else "film"
+    return f'''      <article class="{cls}">
         <div class="film-frame">{frame}</div>
         <h3>{title}</h3>
         <p>{note}</p>
@@ -500,18 +506,15 @@ inspirations = f'''<section class="page-hero">
 
 {HENDRY}
 
-<section class="section">
+<section class="section" id="film">
   <div class="wrap stack-lg">
     <div class="stack measure">
-      <p class="eyebrow">Heart rocks</p>
-      <h2>Found in nature</h2>
-      <p>Each heart-shaped stone was found, not made. Here are a few, with where they turned up.</p>
+      <p class="eyebrow">Film</p>
+      <h2>Film as <em>a teacher of life</em></h2>
+      <p>A great film can show us ourselves in two hours: what we love, what we fear, and what we are capable of. Storytelling is one of the oldest ways the heart has learned, and it is an art worth preserving. These are scenes I return to.</p>
     </div>
-    <div class="projects">
-{rock(("heart-rocks-sandstone.jpg", "Heart-shaped stones gathered beside a sandstone boulder"), "[Where it was found]", "[A line about finding these.]")}
-{rock(("coral-heart-rocks-on-lava.jpg", "White coral hearts on black lava rock"), "[Where it was found]", "[A line about finding these.]")}
-{rock(("coral-heart-in-hand.jpg", "A heart-shaped piece of coral held in a hand on a sandy beach"), "[Where it was found]", "[A line about finding this one.]")}
-    </div>
+{film(*FILMS[0], feature=True)}
+{more_films()}
   </div>
 </section>
 
@@ -528,15 +531,17 @@ inspirations = f'''<section class="page-hero">
   </div>
 </section>
 
-<section class="section" id="film">
+<section class="section">
   <div class="wrap stack-lg">
     <div class="stack measure">
-      <p class="eyebrow">Film</p>
-      <h2>Film as <em>a teacher of life</em></h2>
-      <p>A great film can show us ourselves in two hours: what we love, what we fear, and what we are capable of. Storytelling is one of the oldest ways the heart has learned, and it is an art worth preserving. These are scenes I return to.</p>
+      <p class="eyebrow">Heart rocks</p>
+      <h2>Found in nature</h2>
+      <p>Each heart-shaped stone was found, not made. Here are a few, with where they turned up.</p>
     </div>
-    <div class="films">
-{chr(10).join(film(*f) for f in FILMS)}
+    <div class="projects">
+{rock(("heart-rocks-sandstone.jpg", "Heart-shaped stones gathered beside a sandstone boulder"), "[Where it was found]", "[A line about finding these.]")}
+{rock(("coral-heart-rocks-on-lava.jpg", "White coral hearts on black lava rock"), "[Where it was found]", "[A line about finding these.]")}
+{rock(("coral-heart-in-hand.jpg", "A heart-shaped piece of coral held in a hand on a sandy beach"), "[Where it was found]", "[A line about finding this one.]")}
     </div>
   </div>
 </section>
