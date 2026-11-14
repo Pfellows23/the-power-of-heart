@@ -165,19 +165,16 @@ home = f'''<section class="hero hero-photo" style="--photo: url('images/ocean-sp
     </div>
     <div class="paths">
       <article class="path">
-        {img("silver-ocean.jpg", "Sunlight sparkling on the ocean near the shore")}
         <h3>Heart-Focused Coaching</h3>
         <p>One-to-one sessions for inner alignment, so the choices you make each day match what your heart already knows.</p>
         <a class="more" href="services.html#coaching">Coaching services</a>
       </article>
       <article class="path">
-        {img("golden-water.jpg", "Golden evening light on gentle ocean waves")}
         <h3>Spiritual Teaching</h3>
         <p>Teachings, gatherings, and practices that help you reconnect with your purpose and the wisdom within.</p>
         <a class="more" href="services.html#teaching">Teaching offerings</a>
       </article>
       <article class="path">
-        {img("heart-rocks-sandstone.jpg", "Heart-shaped stones gathered beside a sandstone boulder on the beach")}
         <h3>Projects &amp; Books</h3>
         <p>The Hearts of Mauna Kea pairs photographs and sentiments from a special place and time, where the heart-shaped rocks that arrived carried a depth of heartfulness and meaning.</p>
         <a class="more" href="projects.html">See projects</a>
