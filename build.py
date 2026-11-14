@@ -129,17 +129,21 @@ home = f'''<section class="hero hero-photo" style="--photo: url('images/ocean-sp
   <div class="wrap hero-grid">
     <div class="hero-text stack-lg">
       <h1>Live from the <em>wisdom of your heart</em></h1>
-      <p class="lede">Heart-focused coaching for inner alignment, empowering you in every area of life and along your path of purpose.</p>
-      <div class="actions">
-        <a class="btn" href="{BOOKING}" target="_blank" rel="noopener">Book a discovery call</a>
-        <a class="btn btn-ghost" href="services.html">Explore services</a>
-      </div>
     </div>
     <a class="hero-cover" href="projects.html" aria-label="The Hearts of Mauna Kea book">
       {img("coral-heart-in-hand.jpg", "The Hearts of Mauna Kea: a heart-shaped piece of coral held on a sandy beach")}
     </a>
   </div>
 </section>
+<div class="hero-after">
+  <div class="wrap">
+    <p class="lede">Heart-focused coaching for inner alignment, empowering you in every area of life and along your path of purpose.</p>
+    <div class="actions">
+      <a class="btn" href="{BOOKING}" target="_blank" rel="noopener">Book a discovery call</a>
+      <a class="btn btn-ghost" href="services.html">Explore services</a>
+    </div>
+  </div>
+</div>
 
 <section class="section heartfulness" id="heartfulness">
   <div class="wrap stack-lg">

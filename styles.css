@@ -583,3 +583,33 @@ h2 em { font-family: var(--font-voice); font-style: italic; color: var(--tide); 
 .hero-photo .actions { gap: 0.6rem; flex-wrap: wrap; }
 .hero-photo .actions .btn { padding: 0.6rem 1.15rem; font-size: 0.68rem; letter-spacing: 0.16em; min-height: 0; }
 @media (min-width: 801px) { .hero-photo .hero-grid { grid-template-columns: 0.78fr 1.22fr; } .hero-cover { margin-left: -6vw; } }
+
+/* Home hero v3: heart fills the view, headline only; intro line and small buttons sit below */
+.hero-photo { padding-block: clamp(1.5rem, 3vw, 2.5rem) clamp(3rem, 6vw, 5rem);
+  background-image:
+    linear-gradient(90deg, color-mix(in srgb, var(--salt) 78%, transparent) 0%, color-mix(in srgb, var(--salt) 40%, transparent) 20%, color-mix(in srgb, var(--salt) 0%, transparent) 38%),
+    linear-gradient(0deg, var(--salt) 0%, color-mix(in srgb, var(--salt) 0%, transparent) 14%),
+    var(--photo, none), var(--beach-wash); }
+.hero-photo h1 { font-size: clamp(2.3rem, 3.7vw, 3.5rem); }
+@media (min-width: 801px) {
+  .hero-photo .hero-grid { grid-template-columns: 0.5fr 1.5fr; min-height: min(76vh, 48rem); align-items: center; }
+  .hero-photo .hero-text { align-self: end; max-width: 20rem; padding-bottom: 2.5rem; }
+  .hero-cover { width: calc(100% + 14vw); max-width: 92rem; margin: 0 -10vw 0 -4vw; }
+  .hero-cover .photo { aspect-ratio: 16 / 9; }
+}
+.hero-after { padding-block: clamp(1.25rem, 3vw, 2rem) 0; }
+.hero-after .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1.25rem 2.5rem; flex-wrap: wrap; }
+.hero-after .lede { margin: 0; max-width: 36rem; font-size: 1.1rem; }
+.hero-after .actions { display: flex; gap: 0.6rem; flex-wrap: wrap; margin: 0; }
+.hero-after .btn { padding: 0.55rem 1.1rem; font-size: 0.66rem; letter-spacing: 0.16em; }
+.heartfulness { padding-top: clamp(2.5rem, 6vw, 4.5rem); }
+@media (max-width: 800px) {
+  .hero-photo { padding-bottom: 2rem; }
+  .hero-cover .photo { aspect-ratio: 1 / 1; }
+}
+@media (min-width: 801px) {
+  .hero-photo { background-image:
+    radial-gradient(ellipse 34% 46% at 12% 92%, color-mix(in srgb, var(--salt) 92%, transparent) 0%, color-mix(in srgb, var(--salt) 70%, transparent) 45%, color-mix(in srgb, var(--salt) 0%, transparent) 100%),
+    linear-gradient(0deg, var(--salt) 0%, color-mix(in srgb, var(--salt) 0%, transparent) 12%),
+    var(--photo, none), var(--beach-wash); }
+}
