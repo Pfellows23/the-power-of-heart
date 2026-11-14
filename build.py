@@ -483,11 +483,12 @@ def film(title, note, url, feature=False):
         frame = f'<iframe src="https://www.youtube-nocookie.com/embed/{m.group(1)}" title="{title}" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>'
     else:
         frame = '<p class="film-soon">Clip coming soon</p>'
+    watch = f'\n        <p><a class="more" href="https://www.youtube.com/watch?v={m.group(1)}" target="_blank" rel="noopener">Watch on YouTube</a></p>' if m else ""
     cls = "film film-feature" if feature else "film"
     return f'''      <article class="{cls}">
         <div class="film-frame">{frame}</div>
         <h3>{title}</h3>
-        <p>{note}</p>
+        <p>{note}</p>{watch}
       </article>'''
 
 def teaching(text, place):
