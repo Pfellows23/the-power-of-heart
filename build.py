@@ -128,7 +128,7 @@ PILLARS = '<ul class="pillars" aria-label="What clients move toward"><li>Peace</
 home = f'''<section class="hero hero-photo" style="--photo: url('images/ocean-sparkle.jpg')">
   <div class="wrap hero-grid">
     <div class="hero-text stack-lg">
-      <h1>Ancient wisdom.<br><em>Undiscovered power.</em></h1>
+      <h1>Ancient wisdom.<br><em>Undiscovered awareness.</em></h1>
     </div>
     <a class="hero-cover" href="projects.html" aria-label="The Hearts of Mauna Kea book">
       {img("coral-heart-in-hand.jpg", "The Hearts of Mauna Kea: a heart-shaped piece of coral held on a sandy beach")}
@@ -137,7 +137,7 @@ home = f'''<section class="hero hero-photo" style="--photo: url('images/ocean-sp
 </section>
 <div class="hero-after">
   <div class="wrap">
-    <p class="lede">Coaching rooted in lineages thousands of years old, for the power most of modern life has left undiscovered: the intelligence of the heart.</p>
+    <p class="lede">Coaching rooted in lineages thousands of years old, for the awareness most of modern life has left undiscovered: the intelligence of the heart.</p>
     <div class="actions">
       <a class="btn" href="{BOOKING}" target="_blank" rel="noopener">Book a discovery call</a>
       <a class="btn btn-ghost" href="services.html">Explore services</a>
@@ -153,7 +153,7 @@ home = f'''<section class="hero hero-photo" style="--photo: url('images/ocean-sp
       <h2>The oldest intelligence <em>we have</em></h2>
       <p class="lede">Long before anyone studied the mind, the great wisdom traditions pointed to the heart as the seat of knowing. Most of us were never taught how to use it.</p>
       <p>This is not sentiment. The heart is a center of intelligence, where intuition, courage, and truth meet. The mind can analyze a life, but only the heart can tell you whether it is yours. When it leads, decisions become clear, relationships become honest, and purpose stops being something to chase and becomes something to live.</p>
-      <p>Mindfulness taught a generation to quiet the mind. Heartfulness is the next step, and it has never mattered more. In a world that is louder, faster, and more divided than ever, a quiet mind is no longer enough. The power these traditions have guarded all along is still waiting to be discovered.</p>
+      <p>Mindfulness taught a generation to quiet the mind. Heartfulness is the next step, and it has never mattered more. In a world that is louder, faster, and more divided than ever, a quiet mind is no longer enough. The awareness these traditions have guarded all along is still waiting to be discovered.</p>
     </div>
   </div>
 </section>
