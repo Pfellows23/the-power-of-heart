@@ -354,7 +354,7 @@ projects = f'''<section class="page-hero">
       <dl class="field-note">
         <dt>Format</dt><dd>[Hardcover · pages]</dd>
         <dt>Price</dt><dd>[$ Price] plus shipping</dd>
-        <dt>Place</dt><dd>Mauna Kea, Hawai‘i Island, 13,803 ft</dd>
+        <dt>Place</dt><dd>Mauna Kea Beach Hotel, Kauna‘oa Bay, Hawai‘i Island</dd>
       </dl>
       <div class="actions">
         <a class="btn" href="{stripe("BOOK_HEARTS_OF_MAUNA_KEA")}">Buy the book</a>
@@ -568,7 +568,11 @@ book_preview = f'''<section class="section book">
     <div class="stack measure"><p class="eyebrow">Book preview</p><h1>The Hearts of Mauna Kea</h1></div>
     <article class="spread" id="p1">
       {img("coral-heart-in-hand.jpg", "The Hearts of Mauna Kea: a heart-shaped piece of coral held on a sandy beach")}
-      <div class="stack"><p class="lede">Photographs and sentiments from a special place and time, where the heart-shaped rocks that arrived carried a depth of heartfulness and meaning.</p><nav class="book-nav" aria-label="Book pages"><span></span><span class="book-count">1 / 7</span><a class="btn btn-small" href="#p2">Next page</a></nav></div>
+      <div class="stack">
+        <p class="lede">On the Kohala Coast of Hawai‘i Island stands the Mauna Kea Beach Hotel, the first of Laurance Rockefeller’s resorts, opened in 1965 on the white crescent of Kauna‘oa Bay and built to honor the land and sea around it.</p>
+        <p>I arrived there in a season of my life when everything was shifting. What followed was a quiet run of serendipity: chance meetings, perfect timing, and heart-shaped stones appearing on the shore as if they had been waiting for me.</p>
+        <p>This book gathers those moments. It is a record of how a rare place, the right time, and the right people can set the unexpected in motion and awaken the soul.</p>
+        <nav class="book-nav" aria-label="Book pages"><span></span><span class="book-count">1 / 7</span><a class="btn btn-small" href="#p2">Next page</a></nav></div>
     </article>
     <article class="spread" id="p2">
       {img("ocean-sparkle.jpg", "Sunlight sparkling across a calm blue sea", "wide")}
