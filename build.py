@@ -193,7 +193,7 @@ home = f'''<section class="hero hero-photo" style="--photo: url('images/ocean-sp
       <h2>The Hearts of Mauna Kea</h2>
       <p>The first book in The Hearts of… series pairs photographs and sentiments from a special place and time, where the heart-shaped rocks that arrived carried a depth of heartfulness and meaning.</p>
       <div class="actions">
-        <a class="btn" href="{stripe("BOOK_HEARTS_OF_MAUNA_KEA")}">Buy the book</a>
+        <a class="btn" href="request-book.html">Buy the book</a>
         <a class="btn btn-ghost" href="book-preview.html">Look inside the book</a>
       </div>
       <p class="secure-note">The book preview is password protected.</p>
@@ -357,9 +357,8 @@ projects = f'''<section class="page-hero">
         <dt>Place</dt><dd>Mauna Kea Beach Hotel, Kauna‘oa Bay, Hawai‘i Island</dd>
       </dl>
       <div class="actions">
-        <a class="btn" href="{stripe("BOOK_HEARTS_OF_MAUNA_KEA")}">Buy the book</a>
+        <a class="btn" href="request-book.html">Buy the book</a>
       </div>
-      <p class="secure-note">Payments are processed securely by Stripe.</p>
     </div>
   </div>
 </section>
@@ -619,12 +618,41 @@ book_preview = f'''<section class="section book">
       <div class="stack">
         <h2>Continue the journey</h2>
         <p>The full book holds every place, sentiment, and heart rock.</p>
-        <div class="actions"><a class="btn" href="{stripe("BOOK_HEARTS_OF_MAUNA_KEA")}">Buy the book</a></div>
+        <div class="actions"><a class="btn" href="request-book.html">Buy the book</a></div>
         <nav class="book-nav" aria-label="Book pages"><a class="btn btn-ghost btn-small" href="#p6">Previous</a><span class="book-count">7 / 7</span><a class="btn btn-small" href="projects.html">Back to Projects</a></nav>
       </div>
     </article>
   </div>
 </section>'''
+
+# Hearts of Mauna Kea is sold out: "Buy the book" opens this request form.
+# FormSubmit emails each request to EMAIL. The very first submission sends Pamela
+# a one-time activation email from FormSubmit that she must confirm.
+request_book = f'''<section class="page-hero" id="request">
+  <div class="wrap split">
+    <div class="stack">
+      <p class="eyebrow">The Hearts of Mauna Kea</p>
+      <h1>Request a copy</h1>
+      <p class="lede">The first edition of The Hearts of Mauna Kea has sold out.</p>
+      <p>Thank you to everyone who has carried a copy home. Leave your details here and I will be in touch as soon as more copies are available.</p>
+      {img("coral-heart-in-hand.jpg", "The Hearts of Mauna Kea: a heart-shaped piece of coral held on a sandy beach")}
+    </div>
+    <form class="booking-box request-form" action="https://formsubmit.co/{EMAIL}" method="POST">
+      <h2>Book request</h2>
+      <input type="hidden" name="_subject" value="Book request: The Hearts of Mauna Kea">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="Book" value="The Hearts of Mauna Kea">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label>Name<input type="text" name="name" autocomplete="name" required></label>
+      <label>Email<input type="email" name="email" autocomplete="email" required></label>
+      <label>Number of copies<input type="number" name="copies" min="1" value="1" inputmode="numeric"></label>
+      <label><span>Message <span class="muted">(optional)</span></span><textarea name="message" rows="4"></textarea></label>
+      <button class="btn" type="submit">Send my request</button>
+      <p class="secure-note">Your details go only to Pamela and are used only to follow up about the book.</p>
+    </form>
+  </div>
+</section>
+{CTA}'''
 
 pages = [
     ("index.html", "The Power of Heart | Alignment Coaching & Spiritual Teaching",
@@ -639,6 +667,8 @@ pages = [
      "Heart rocks found in nature, wisdom teachings, and reflections from Mauna Kea and Hendry's Beach in Santa Barbara.", inspirations, None),
     ("contact.html", "Book a Free Discovery Call | The Power of Heart",
      "Book a free 30-minute discovery call for heart-focused coaching, or get in touch with The Power of Heart.", contact, None),
+    ("request-book.html", "Request a Copy of The Hearts of Mauna Kea | The Power of Heart",
+     "The first edition of The Hearts of Mauna Kea has sold out. Request a copy and Pamela will follow up when more are available.", request_book, None),
 ]
 
 for f in ["coaching.html", "creative.html", "books.html", "book-a-call.html", "site.js"]:
