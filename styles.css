@@ -712,3 +712,18 @@ main:has(#hearts-of-hendrys, #in-the-works) .band { height: clamp(180px, 26vw, 3
 #site-menu ul.sub a { display: block; padding: 0.55rem 1.1rem; border-bottom: 0; white-space: nowrap; text-align: center; }
 #site-menu ul.sub a[aria-current="page"] { color: var(--tide); }
 @media (max-width: 600px) { #site-menu .has-sub summary { font-size: 0.7rem; letter-spacing: 0.11em; } }
+
+/* Testimonials under Hearts of Mauna Kea: CSS-only rotation (no JS), 3 quotes, 8s each */
+.testimonials { padding-block: 0 clamp(1.5rem, 4vw, 2.5rem); text-align: center; }
+.testimonials .eyebrow { margin-bottom: 0.9rem; }
+.quote-rotator { display: grid; max-width: 44rem; margin: 0 auto; }
+.quote { grid-area: 1 / 1; margin: 0; text-align: center; opacity: 0; animation: quote-cycle 24s infinite; }
+.quote:nth-child(2) { animation-delay: 8s; }
+.quote:nth-child(3) { animation-delay: 16s; }
+.quote blockquote { margin: 0; font-family: var(--font-voice, var(--font-display)); font-style: italic; font-size: clamp(1.25rem, 2.4vw, 1.6rem); line-height: 1.45; color: var(--basalt); }
+.quote figcaption { margin-top: 0.7rem; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--driftwood); }
+@keyframes quote-cycle { 0% { opacity: 0; } 4%, 30% { opacity: 1; } 34%, 100% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .quote { animation: none; opacity: 1; grid-area: auto; }
+  .quote-rotator { gap: 1.5rem; }
+}

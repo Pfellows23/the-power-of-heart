@@ -362,7 +362,7 @@ books = f'''<section class="page-hero">
     <div class="stack">
       <p class="eyebrow">Book one of The Hearts of… series</p>
       <h2>About the book</h2>
-      <p>[Book description from your current site.]</p>
+      <p><em>Hearts of Mauna Kea</em> is a visually captivating coffee table book that celebrates the spirit, beauty, and timeless legacy of the Mauna Kea Beach Hotel on Hawai‘i Island. Through Pamela Fellows’ original photography and reflective prose, the book captures the profound sense of love and aloha that has defined this extraordinary place for generations.</p>
       <dl class="field-note">
         <dt>Price</dt><dd>$88</dd>
         <dt>Place</dt><dd>Mauna Kea Beach Hotel, Kauna‘oa Bay, Hawai‘i Island</dd>
@@ -370,6 +370,17 @@ books = f'''<section class="page-hero">
       <div class="actions">
         <a class="btn" href="#request-book">Buy the book</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" aria-label="What readers say">
+  <div class="wrap">
+    <p class="eyebrow">What readers say</p>
+    <div class="quote-rotator">
+      <figure class="quote"><blockquote>“[Testimonial one.]”</blockquote><figcaption>[Name]</figcaption></figure>
+      <figure class="quote"><blockquote>“[Testimonial two.]”</blockquote><figcaption>[Name]</figcaption></figure>
+      <figure class="quote"><blockquote>“[Testimonial three.]”</blockquote><figcaption>[Name]</figcaption></figure>
     </div>
   </div>
 </section>
