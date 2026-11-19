@@ -31,6 +31,9 @@ FOAM = band("sea-foam.jpg", "White sea foam", "Where the ocean meets the shore")
 MKB = band("coral-heart-rocks-on-lava.jpg", "Coral hearts on lava rock", "Gifts from the shore")
 HENDRY = band("hendrys-beach.jpg", "Hendry's Beach", "Santa Barbara · California")
 
+def book_img(name, alt):
+    return f'<figure class="book-mock"><img src="images/{name}" alt="{alt}" width="614" height="520" loading="lazy" decoding="async"></figure>'
+
 def stripe(key): return f"https://buy.stripe.com/REPLACE_{key}"
 
 def header(slug):
@@ -349,7 +352,7 @@ projects = f'''<section class="page-hero">
 
 <section class="section" style="padding-top:0">
   <div class="wrap split">
-    {img("coral-heart-in-hand.jpg", "The Hearts of Mauna Kea: a heart-shaped piece of coral held on a sandy beach")}
+    {book_img("book-hearts-of-mauna-kea.webp", "Hearts of Mauna Kea, Reflections of Love and Gratitude: book cover showing a heart-shaped piece of coral held on the beach")}
     <div class="stack">
       <p class="eyebrow">Book one of The Hearts of… series</p>
       <h2>About the book</h2>
@@ -387,7 +390,7 @@ projects = f'''<section class="page-hero">
       <p class="lede">Listening from the Beach. [A sentence or two introducing the book.]</p>
     </div>
     <div class="split">
-      {img("hearts-of-hendrys-cover.jpg", "Hearts of Hendry's, Listening from the Beach: book cover showing a heart-shaped stone held up against a sunset over the ocean", "book-cover")}
+      {book_img("book-hearts-of-hendrys.webp", "Hearts of Hendry's, Listening from the Beach: book cover showing a heart-shaped stone held up against a sunset over the ocean")}
       <div class="stack">
         <p class="eyebrow">Book two of The Hearts of… series</p>
         <h3 class="h2-size">About the book</h3>
@@ -500,6 +503,20 @@ def teaching(text, place):
         <p class="meta muted" style="font-size:.8rem;letter-spacing:.14em;text-transform:uppercase">{place}</p>
       </div>'''
 
+# Hidden until Pamela fills it in: change `if True` to `if False` in the inspirations page.
+WISDOM = f'''<section class="section section-sand">
+  <div class="wrap stack-lg">
+    <div class="stack measure">
+      <p class="eyebrow">Wisdom teachings</p>
+      <h2>Words to carry with you</h2>
+    </div>
+    <div class="split">
+{teaching("[A wisdom teaching or inspiring quote.]", "[Place or source]")}
+{teaching("[A wisdom teaching or inspiring quote.]", "[Place or source]")}
+    </div>
+  </div>
+</section>'''
+
 inspirations = f'''<section class="page-hero">
   <div class="wrap stack measure">
     <p class="eyebrow">Inspirations</p>
@@ -522,18 +539,7 @@ inspirations = f'''<section class="page-hero">
   </div>
 </section>
 
-<section class="section section-sand">
-  <div class="wrap stack-lg">
-    <div class="stack measure">
-      <p class="eyebrow">Wisdom teachings</p>
-      <h2>Words to carry with you</h2>
-    </div>
-    <div class="split">
-{teaching("[A wisdom teaching or inspiring quote.]", "[Place or source]")}
-{teaching("[A wisdom teaching or inspiring quote.]", "[Place or source]")}
-    </div>
-  </div>
-</section>
+{'' if True else WISDOM}
 
 <section class="section">
   <div class="wrap stack-lg">

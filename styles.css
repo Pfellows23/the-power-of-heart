@@ -663,3 +663,7 @@ h2 em { font-family: var(--font-voice); font-style: italic; color: var(--tide); 
 .about-hero .photo { width: min(34%, 350px); aspect-ratio: 5 / 7; }
 .about-hero .photo img { object-position: 30% 40%; }
 @media (max-width: 560px) { .about-hero .photo { width: 44%; max-width: 190px; } }
+
+/* Projects: book cover mockups */
+.book-mock { margin: 0; justify-self: center; width: min(100%, 520px); }
+.book-mock img { display: block; width: 100%; height: auto; }
