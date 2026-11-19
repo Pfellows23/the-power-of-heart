@@ -362,7 +362,7 @@ books = f'''<section class="page-hero">
     <div class="stack">
       <p class="eyebrow">Book one of The Hearts of… series</p>
       <h2>About the book</h2>
-      <p><em>Hearts of Mauna Kea</em> is a visually captivating coffee table book that celebrates the spirit, beauty, and timeless legacy of the Mauna Kea Beach Hotel on Hawai‘i Island. Through Pamela Fellows’ original photography and reflective prose, the book captures the profound sense of love and aloha that has defined this extraordinary place for generations.</p>
+      <p><em>Hearts of Mauna Kea</em> is a visually captivating coffee table book that celebrates the spirit, beauty, and timeless legacy of the Mauna Kea Beach Hotel on the Island of Hawai‘i. Through Pamela Fellows’ original photography and reflective prose, the book captures the profound sense of love and aloha that has defined this extraordinary place for generations.</p>
       <dl class="field-note">
         <dt>Price</dt><dd>$88</dd>
         <dt>Place</dt><dd>Mauna Kea Beach Hotel, Kauna‘oa Bay, Hawai‘i Island</dd>
