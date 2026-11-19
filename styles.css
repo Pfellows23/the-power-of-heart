@@ -622,16 +622,39 @@ h2 em { font-family: var(--font-voice); font-style: italic; color: var(--tide); 
 /* Home: Pamela's opening line */
 .thread-line { font-family: var(--font-voice, var(--font-display)); font-style: italic; font-weight: 300; font-size: clamp(1.5rem, 3vw, 2.15rem); line-height: 1.3; color: var(--tide); margin-bottom: clamp(1.5rem, 4vw, 2.75rem); padding-bottom: clamp(1.5rem, 4vw, 2.75rem); border-bottom: 1px solid color-mix(in srgb, var(--driftwood) 30%, transparent); }
 
-/* ---------- book request form ---------- */
-.request-form { align-items: stretch; }
-.request-form label { display: flex; flex-direction: column; gap: 0.4rem; font-size: var(--step--1); letter-spacing: 0.04em; }
-.request-form input, .request-form textarea {
-  font: inherit; font-size: var(--step-0); color: var(--basalt);
-  background: var(--salt); border: 1px solid #d6cfc2; border-radius: 4px; padding: 0.7rem 0.8rem; width: 100%;
+/* ---------- book request pop-up (CSS-only, opens via #request-book) ---------- */
+.modal { display: none; position: fixed; inset: 0; z-index: 100; align-items: center; justify-content: center; padding: 16px; }
+.modal:target { display: flex; }
+.modal-backdrop { position: absolute; inset: 0; background: rgba(31, 66, 70, 0.55); backdrop-filter: blur(3px); }
+.modal-card {
+  position: relative; width: 100%; max-width: 30rem; max-height: calc(100vh - 32px); overflow-y: auto;
+  background: var(--salt); padding: clamp(1.5rem, 4vw, 2.25rem); border-top: 3px solid var(--tide);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25); display: flex; flex-direction: column; gap: 0.75rem;
+  animation: modal-in 0.25s ease-out;
 }
-.request-form input:focus, .request-form textarea:focus { outline: 2px solid var(--tide); outline-offset: 1px; border-color: var(--tide); }
-.request-form .btn { align-self: flex-start; border: 0; cursor: pointer; }
+@keyframes modal-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+.modal-card h2 { font-size: 1.9rem; line-height: 1.1; margin: 0; }
+.modal-card .eyebrow { margin: 0; }
+.modal-note { margin: 0 0 0.25rem; color: var(--driftwood); font-size: 0.95rem; line-height: 1.55; }
+.modal-close {
+  position: absolute; top: 0.6rem; right: 0.9rem; font-size: 1.8rem; line-height: 1;
+  color: var(--driftwood); text-decoration: none;
+}
+.modal-close:hover { color: var(--tide); }
+.request-form { display: flex; flex-direction: column; gap: 0.85rem; }
+.request-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
+.request-form label { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--driftwood); min-width: 0; }
+.request-form label .muted { text-transform: none; letter-spacing: 0.02em; }
+.request-form input, .request-form textarea {
+  font: inherit; font-size: 1rem; letter-spacing: normal; text-transform: none; color: var(--basalt);
+  background: transparent; border: 0; border-bottom: 1px solid #cfc6b6; border-radius: 0; padding: 0.4rem 0; width: 100%;
+}
+.request-form textarea { resize: vertical; }
+.request-form input:focus, .request-form textarea:focus { outline: none; border-bottom-color: var(--tide); }
+.request-form .copies { max-width: 6rem; }
+.request-form .btn { align-self: flex-start; border: 0; cursor: pointer; margin-top: 0.4rem; font-family: inherit; }
 .request-form .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+@media (max-width: 30rem) { .request-form .form-row { grid-template-columns: 1fr; } }
 
 /* Page headings sit below the site name in scale */
 :root { --step-4: clamp(2.1rem, 4.2vw, 2.9rem); --step-3: clamp(1.75rem, 3.2vw, 2.2rem); }
