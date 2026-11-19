@@ -368,19 +368,6 @@ projects = f'''<section class="page-hero">
   </div>
 </section>
 
-{MKB}
-<section class="section section-sand">
-  <div class="wrap cta">
-    <div>
-      <p class="eyebrow">Inside the book</p>
-      <h2>Turn the pages</h2>
-      <p>Step through the book one spread at a time. The preview is password protected.</p>
-    </div>
-    <a class="btn btn-ghost" href="book-preview.html">Look inside the book</a>
-  </div>
-</section>
-{wave("wave-flip")}
-
 <section class="section" id="hearts-of-hendrys">
   <div class="wrap stack-lg">
     <div class="stack measure">
@@ -406,6 +393,19 @@ projects = f'''<section class="page-hero">
     </div>
   </div>
 </section>
+{MKB}
+<section class="section section-sand">
+  <div class="wrap cta">
+    <div>
+      <p class="eyebrow">Inside the book</p>
+      <h2>Turn the pages</h2>
+      <p>Step through the book one spread at a time. The preview is password protected.</p>
+    </div>
+    <a class="btn btn-ghost" href="book-preview.html">Look inside the book</a>
+  </div>
+</section>
+{wave("wave-flip")}
+
 {HENDRY}
 
 <section class="section">
