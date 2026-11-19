@@ -294,9 +294,34 @@ def product(title, meta, price, text, key, label="Buy now", photo=None, href=Non
       </article>'''
 
 REEL_FRAMES = [("ocean-sparkle.jpg", "Sunlight sparkling on the ocean"), ("coral-heart-in-hand.jpg", "A heart-shaped piece of coral held in a hand"), ("golden-water.jpg", "Golden evening light on gentle waves"), ("sea-foam.jpg", "White sea foam on the sand"), ("heart-rocks-sandstone.jpg", "Heart-shaped stones beside a sandstone boulder"), ("silver-ocean.jpg", "Silver light on the open ocean"), ("shoreline-pebbles.jpg", "Pebbles along the shoreline")]
+# Pamela's inspirations (added 2026-11-19). The screen line shows over the nature frames only,
+# so it never sits on top of a quote.
+REEL_INSPIRATIONS = [
+    ("insp-swami-om.jpg", "A sign with a teaching on happiness by Swami Purushottamananda"),
+    ("insp-grateful-spiral.jpg", "Spiral lettering: I am grateful for everything I know, everything I am, everything I have"),
+    ("insp-life-is-beautiful.jpg", "Children cuddled close in golden light, with the words Life is beautiful"),
+    ("insp-mary-oliver.jpg", "Mary Oliver: Keep some room in your heart for the unimaginable"),
+    ("insp-little-prince.jpg", "The Little Prince: If someone loves a flower, of which just one exists in all the millions and millions of stars"),
+    ("insp-sunlit-portrait.jpg", "Pamela in warm sunlight"),
+    ("insp-what-if-rock.jpg", "A painted heart rock: What if everything you are going through right now is preparing you for a dream bigger than you can imagine"),
+    ("insp-and-then-one-day.jpg", "An open book on the beach at sunset: and then one day"),
+    ("insp-happiness-sign.jpg", "A sign: Happiness is letting go of what you think your life is supposed to look like"),
+    ("insp-choose-love.jpg", "A framed sign: Choose love. Be kind. Find joy. Feel happy. Smile."),
+]
+REEL_ALL = REEL_FRAMES + REEL_INSPIRATIONS
+REEL_SECS = 6
 def _frames():
-    return "".join(f'<img src="images/{n}" alt="{a}" width="800" height="600" style="--i:{i}" decoding="async">' for i, (n, a) in enumerate(REEL_FRAMES))
+    return "".join(f'<img src="images/{n}" alt="{a}" width="800" height="600" style="--i:{i}" loading="{'eager' if i < 2 else 'lazy'}" decoding="async">' for i, (n, a) in enumerate(REEL_ALL))
+def _reel_style():
+    n = len(REEL_ALL); total = n * REEL_SECS; one = 100 / n
+    line_end = len(REEL_FRAMES) * one
+    return (f"<style>.screen img {{ animation-duration: {total}s, 0.9s; }}"
+            f"@keyframes screen-show {{ 0% {{ opacity: 0; }} {one*0.18:.2f}% {{ opacity: 1; }} {one:.2f}% {{ opacity: 1; }} {one*1.18:.2f}% {{ opacity: 0; }} 100% {{ opacity: 0; }} }}"
+            f".screen-line {{ animation: screen-line {total}s linear infinite; }}"
+            f"@keyframes screen-line {{ 0%, {line_end - one*0.25:.2f}% {{ opacity: 1; }} {line_end:.2f}%, {100 - one*0.2:.2f}% {{ opacity: 0; }} 100% {{ opacity: 1; }} }}"
+            f"@media (prefers-reduced-motion: reduce) {{ .screen-line {{ animation: none; }} }}</style>")
 REEL = f'''<figure class="screen-wrap">
+  {_reel_style()}
   <div class="screen">
     {_frames()}
     <figcaption class="screen-line">We all want to see our most <em>authentic story</em> play out.</figcaption>
