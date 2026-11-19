@@ -378,9 +378,11 @@ books = f'''<section class="page-hero">
   <div class="wrap">
     <p class="eyebrow">What readers say</p>
     <div class="quote-rotator">
-      <figure class="quote"><blockquote>“[Testimonial one.]”</blockquote><figcaption>[Name]</figcaption></figure>
-      <figure class="quote"><blockquote>“[Testimonial two.]”</blockquote><figcaption>[Name]</figcaption></figure>
-      <figure class="quote"><blockquote>“[Testimonial three.]”</blockquote><figcaption>[Name]</figcaption></figure>
+      <figure class="quote"><blockquote>“This is the only book I have ever seen that has made the real true connection between reality and the magic of the Mauna Kea. It’s such a special place that deserves to be appreciated in this way.”</blockquote><figcaption>Grier Eliasek<span>Resident and long-time visitor of the Mauna Kea</span></figcaption></figure>
+      <figure class="quote"><blockquote>“This is my 38th year coming to the Mauna Kea, and after reading this book it seems to be an ideal gift to every single guest upon check-in, because it captures the uniqueness and essence of this beautiful property.”</blockquote><figcaption>Jim Jarrett<span>Filmmaker, actor, teacher</span></figcaption></figure>
+      <figure class="quote"><blockquote>“I think those who have returned to the Mauna Kea would appreciate giving and receiving this gift.”</blockquote><figcaption>Marcia Ray<span>In-residence artist of the Mauna Kea</span></figcaption></figure>
+      <figure class="quote"><blockquote>“Tell Brad I like it!”</blockquote><figcaption>Vicky Kometani<span>PR consultant, Mauna Kea Resort</span></figcaption></figure>
+      <figure class="quote"><blockquote>“Hearts of Mauna Kea is a wonderful manuscript with some very enlightening messages for us all.”</blockquote><figcaption>Bradley D. Doell</figcaption></figure>
     </div>
   </div>
 </section>
