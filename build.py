@@ -1,6 +1,8 @@
-import json, os, html
+import json, os, html, hashlib
 
 OUT = os.path.dirname(os.path.abspath(__file__))
+# Changes whenever styles.css changes, so browsers fetch the new stylesheet instead of a cached one.
+CSS_V = hashlib.md5(open(os.path.join(OUT, "styles.css"), "rb").read()).hexdigest()[:8]
 BASE = "https://www.thepowerofheart.com"
 NAME = "The Power of Heart"
 EMAIL = "pamela@thepowerofheart.com"
@@ -94,7 +96,7 @@ def page(slug, title, desc, body, schema=None):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="{FONTS}">
-<link rel="stylesheet" href="styles.css">{ld}
+<link rel="stylesheet" href="styles.css?v={CSS_V}">{ld}
 </head>
 <body>
 {header(slug)}
