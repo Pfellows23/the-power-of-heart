@@ -358,8 +358,7 @@ projects = f'''<section class="page-hero">
       <h2>About the book</h2>
       <p>[Book description from your current site.]</p>
       <dl class="field-note">
-        <dt>Format</dt><dd>[Hardcover · pages]</dd>
-        <dt>Price</dt><dd>[$ Price] plus shipping</dd>
+        <dt>Price</dt><dd>$88</dd>
         <dt>Place</dt><dd>Mauna Kea Beach Hotel, Kauna‘oa Bay, Hawai‘i Island</dd>
       </dl>
       <div class="actions">
@@ -396,8 +395,7 @@ projects = f'''<section class="page-hero">
         <h3 class="h2-size">About the book</h3>
         <p>[Book description.]</p>
         <dl class="field-note">
-          <dt>Format</dt><dd>[Hardcover · pages]</dd>
-          <dt>Price</dt><dd>[$ Price] plus shipping</dd>
+          <dt>Price</dt><dd>$88</dd>
           <dt>Place</dt><dd>Hendry's Beach, Santa Barbara, California</dd>
         </dl>
         <div class="actions">
