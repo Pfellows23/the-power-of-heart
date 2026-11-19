@@ -12,7 +12,7 @@ MENU = [("Home", "index.html"), ("About", "about.html"), ("Services", "services.
         ("Projects", [("Books", "books.html"), ("Productions", "productions.html")]), ("Inspirations", "inspirations.html")]
 FOOTER_MENU = [(l, h) for l, h in MENU if isinstance(h, str)][:3] + [("Books", "books.html"), ("Productions", "productions.html"), ("Inspirations", "inspirations.html"), ("Contact", "contact.html")]
 
-FONTS = "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+FONTS = "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
 
 WAVE = '<svg class="wave{cls}" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0,44 C220,78 460,6 720,30 C980,54 1210,12 1440,38 L1440,80 L0,80 Z"/></svg>'
 def wave(cls=""): return ""
@@ -234,9 +234,9 @@ about = f'''<section class="page-hero about-hero">
   <div class="wrap stack-lg">
     <div class="stack measure">
       <p class="eyebrow">The lineages behind this work</p>
-      <h2>Many lineages, one truth</h2>
+      <h2>Many lineages, in support of truth and authenticity</h2>
     </div>
-    <div class="offers">
+    <div class="offers bold-heads">
       <div class="offer"><h3>Acting</h3><p>A graduate of the Meisner Technique Acting Studio, where the practice is presence itself: listening fully and responding truthfully, moment to moment.</p></div>
       <div class="offer"><h3>Leadership</h3><p>Training in leading a life and a body of work from clarity and inner alignment, and in helping others do the same.</p></div>
       <div class="offer"><h3>Transformation</h3><p>Certified in Women's Energetics, the study of the subtle energy that moves through us and how real change takes root.</p></div>
@@ -253,7 +253,7 @@ about = f'''<section class="page-hero about-hero">
       <h2>Support for the turning points</h2>
       <p>People often find me when life is asking something new of them. These are the places I know best.</p>
     </div>
-    <div class="paths">
+    <div class="paths bold-heads">
       <div class="stack"><h3>Relationships</h3><p>Coaching for the relationships that matter most, beginning with the one you have with yourself, so you can love and be loved from a whole heart.</p></div>
       <div class="stack"><h3>Women's coaching</h3><p>For women who hold many roles and carry many gifts, and who want to honor every part of who they are instead of choosing just one.</p></div>
       <div class="stack"><h3>Transition and awakening</h3><p>Steady support through times of change, through the dark night of the soul when the old life falls away, and through the awakening that follows.</p></div>
