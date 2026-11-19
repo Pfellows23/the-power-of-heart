@@ -417,16 +417,22 @@ projects = f'''<section class="page-hero">
     </div>
     <div class="plays">
       <article class="play">
+        <img class="play-poster" src="images/play-vincent.jpg" alt="Poster for Vincent: Jim Jarrett as Theo van Gogh over a painted landscape" width="640" height="887" loading="lazy" decoding="async">
+        <div class="play-text">
         <p class="meta">Coming soon · Santa Barbara</p>
         <h3>Vincent</h3>
         <p class="play-by">By Leonard Nimoy · starring Jim Jarrett</p>
         <p>Paris, 1890. A week after Vincent van Gogh's death, his brother Theo rents a hall to tell the story he could not speak at the funeral, with Vincent's paintings projected behind him. Seen by a quarter of a million people on four continents.</p>
+        </div>
       </article>
       <article class="play">
+        <img class="play-poster" src="images/play-meisner.jpg" alt="Poster for Meisner: a line drawing of Sanford Meisner" width="616" height="900" loading="lazy" decoding="async">
+        <div class="play-text">
         <p class="meta">Coming soon · Santa Barbara</p>
         <h3>Meisner</h3>
         <p class="play-by">Created, performed, and directed by Jim Jarrett</p>
         <p>Two acts, thirty years apart, with the legendary acting teacher Sanford Meisner, brought to life by his last teaching protégé. "As close as you're ever going to get to experiencing the genius of Sanford Meisner." Jon Voight</p>
+        </div>
       </article>
     </div>
   </div>

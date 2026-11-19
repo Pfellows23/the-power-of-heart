@@ -681,3 +681,11 @@ h2 em { font-family: var(--font-voice); font-style: italic; color: var(--tide); 
 main:has(#in-the-works) .section { padding-block: clamp(2.25rem, 5vw, 3.75rem); }
 main:has(#in-the-works) .section[style*="padding-top"] { padding-top: 0; }
 main:has(#in-the-works) .band { height: clamp(180px, 26vw, 360px); }
+
+/* Play posters */
+.play { display: grid; grid-template-columns: minmax(0, 40%) 1fr; gap: clamp(1rem, 2.5vw, 1.5rem); align-items: start; }
+.play > * + * { margin-top: 0; }
+.play-text > * + * { margin-top: 0.7rem; }
+.play-poster { width: 100%; height: auto; display: block; box-shadow: 0 10px 24px -14px rgba(30, 40, 45, 0.45); }
+@media (max-width: 1000px) and (min-width: 761px) { .play { grid-template-columns: 1fr; } .play-poster { max-width: 240px; } }
+@media (max-width: 480px) { .play { grid-template-columns: 1fr; } .play-poster { max-width: 210px; } }
