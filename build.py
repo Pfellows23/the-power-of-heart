@@ -321,7 +321,7 @@ services = f'''<section class="page-hero">
     </div>
     <div class="products">
 {product("Discovery Call", "30 minutes · Zoom or phone", "Free", "A first conversation to see if we are a good fit.", "", "Book a time").replace(stripe(""), BOOKING)}
-{product("Single Coaching Session", "[Length]", "[$ Price]", "[Description from your current site.]", "SINGLE_SESSION", "Book &amp; pay")}
+{product("Single Coaching Session", "45 minutes", "$108", "One session, one commitment: to meet you where you are, bring what you know into alignment with how you live, and leave with a clear path forward.", "SINGLE_SESSION", "Book &amp; pay")}
 {product("Coaching Package", "[Number of sessions]", "[$ Price]", "[Description from your current site.]", "COACHING_PACKAGE", "Book &amp; pay")}
     </div>
   </div>
