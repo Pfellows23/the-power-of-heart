@@ -100,9 +100,8 @@
           <dt>Place</dt><dd>Hendry's Beach, Santa Barbara, California</dd>
         </dl>
         <div class="actions">
-          <a class="btn" href="https://buy.stripe.com/REPLACE_BOOK_HEARTS_OF_HENDRYS">Buy the book</a>
+          <a class="btn" href="#request-hendrys">Buy the book</a>
         </div>
-        <p class="secure-note">Payments are processed securely by Stripe.</p>
       </div>
     </div>
   </div>
@@ -144,6 +143,28 @@
       <input type="hidden" name="_subject" value="Book request: The Hearts of Mauna Kea">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="Book" value="The Hearts of Mauna Kea">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="form-row">
+        <label>Name<input type="text" name="name" autocomplete="name" required></label>
+        <label>Email<input type="email" name="email" autocomplete="email" required></label>
+      </div>
+      <label class="copies">Copies<input type="number" name="copies" min="1" value="1" inputmode="numeric"></label>
+      <label><span>Message <span class="muted">(optional)</span></span><textarea name="message" rows="3"></textarea></label>
+      <button class="btn" type="submit">Send request</button>
+    </form>
+  </div>
+</div>
+<div class="modal" id="request-hendrys" role="dialog" aria-modal="true" aria-labelledby="request-hendrys-title">
+  <a class="modal-backdrop" href="#_" aria-label="Close"></a>
+  <div class="modal-card">
+    <a class="modal-close" href="#_" aria-label="Close">&times;</a>
+    <p class="eyebrow">Hearts of Hendry's</p>
+    <h2 id="request-hendrys-title">Request a copy</h2>
+    <p class="modal-note">This book is still being created. Request your copy and I will follow up personally as soon as it is ready.</p>
+    <form class="request-form" action="https://formsubmit.co/pamela@thepowerofheart.com" method="POST">
+      <input type="hidden" name="_subject" value="Book request: Hearts of Hendry's">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="Book" value="Hearts of Hendry's">
       <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="form-row">
         <label>Name<input type="text" name="name" autocomplete="name" required></label>

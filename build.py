@@ -112,6 +112,7 @@ def page(slug, title, desc, body, schema=None):
 {body}
 </main>
 {REQUEST_MODAL if 'href="#request-book"' in body else ''}
+{REQUEST_MODAL_HENDRYS if 'href="#request-hendrys"' in body else ''}
 {footer()}
 </body>
 </html>
@@ -391,9 +392,8 @@ books = f'''<section class="page-hero">
           <dt>Place</dt><dd>Hendry's Beach, Santa Barbara, California</dd>
         </dl>
         <div class="actions">
-          <a class="btn" href="{stripe("BOOK_HEARTS_OF_HENDRYS")}">Buy the book</a>
+          <a class="btn" href="#request-hendrys">Buy the book</a>
         </div>
-        <p class="secure-note">Payments are processed securely by Stripe.</p>
       </div>
     </div>
   </div>
@@ -655,17 +655,18 @@ book_preview = f'''<section class="section book">
 # (CSS-only, via :target, no JavaScript). page() adds it to any page that links to #request-book.
 # FormSubmit emails each request to EMAIL. The very first submission sends Pamela
 # a one-time activation email from FormSubmit that she must confirm.
-REQUEST_MODAL = f'''<div class="modal" id="request-book" role="dialog" aria-modal="true" aria-labelledby="request-book-title">
+def request_modal(mid, book, note):
+    return f'''<div class="modal" id="{mid}" role="dialog" aria-modal="true" aria-labelledby="{mid}-title">
   <a class="modal-backdrop" href="#_" aria-label="Close"></a>
   <div class="modal-card">
     <a class="modal-close" href="#_" aria-label="Close">&times;</a>
-    <p class="eyebrow">The Hearts of Mauna Kea</p>
-    <h2 id="request-book-title">Request a copy</h2>
-    <p class="modal-note">The first edition has sold out. Leave your details and I will be in touch as soon as more copies are available.</p>
+    <p class="eyebrow">{book}</p>
+    <h2 id="{mid}-title">Request a copy</h2>
+    <p class="modal-note">{note}</p>
     <form class="request-form" action="https://formsubmit.co/{EMAIL}" method="POST">
-      <input type="hidden" name="_subject" value="Book request: The Hearts of Mauna Kea">
+      <input type="hidden" name="_subject" value="Book request: {book}">
       <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="Book" value="The Hearts of Mauna Kea">
+      <input type="hidden" name="Book" value="{book}">
       <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="form-row">
         <label>Name<input type="text" name="name" autocomplete="name" required></label>
@@ -677,6 +678,11 @@ REQUEST_MODAL = f'''<div class="modal" id="request-book" role="dialog" aria-moda
     </form>
   </div>
 </div>'''
+
+REQUEST_MODAL = request_modal("request-book", "The Hearts of Mauna Kea",
+    "The first edition has sold out. Leave your details and I will be in touch as soon as more copies are available.")
+REQUEST_MODAL_HENDRYS = request_modal("request-hendrys", "Hearts of Hendry's",
+    "This book is still being created. Request your copy and I will follow up personally as soon as it is ready.")
 
 pages = [
     ("index.html", "The Power of Heart | Alignment Coaching & Spiritual Teaching",
