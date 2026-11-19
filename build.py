@@ -221,7 +221,7 @@ about = f'''<section class="page-hero about-hero">
       <h1>Hello and welcome</h1>
       <p class="lede">My work serves the journey of the soul: helping you live the dharma and the purpose you came here to fulfill.</p>
       <p>Everything I offer was first given to me. My coaching draws on years of study with lineage holders across acting, leadership, transformation, yoga, meditation, and Buddhism. Each tradition opened a different doorway into the same truth, and together they shape how I listen, guide, and walk beside the people I work with.</p>
-      <p>I have been a student of teachers who carry living lineages, each one handed down from teacher to student over generations. This is the ground my coaching stands on.</p>
+      <p>I have been a student of teachers who carry living lineages, each one handed down from teacher to student over generations. This is the ground my coaching stands on. And it is why I teach: I am grateful for every teacher I have ever had, and passing on what they gave me is how I honor them.</p>
       <div class="actions">
         <a class="btn" href="{BOOKING}" target="_blank" rel="noopener">Book a discovery call</a>
         <a class="btn btn-ghost" href="services.html">Explore services</a>
