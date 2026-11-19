@@ -17,7 +17,7 @@ FONTS = "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0
 WAVE = '<svg class="wave{cls}" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0,44 C220,78 460,6 720,30 C980,54 1210,12 1440,38 L1440,80 L0,80 Z"/></svg>'
 def wave(cls=""): return ""
 SHORE = ''
-SIZES = {"coral-heart-in-hand.jpg": (1168, 800), "ocean-sparkle.jpg": (980, 1095), "hendrys-beach.jpg": (2000, 743), "golden-water.jpg": (982, 1236), "sea-foam.jpg": (2000, 1278), "coral-heart-rocks-on-lava.jpg": (1446, 1356), "silver-ocean.jpg": (1452, 1362), "heart-rocks-sandstone.jpg": (1340, 1362), "shoreline-pebbles.jpg": (1452, 1360), "pamela-sunset-beach.jpg": (720, 900), "hearts-of-hendrys-cover.jpg": (1016, 762)}
+SIZES = {"coral-heart-in-hand.jpg": (1168, 800), "ocean-sparkle.jpg": (980, 1095), "hendrys-beach.jpg": (2000, 743), "golden-water.jpg": (982, 1236), "sea-foam.jpg": (2000, 1278), "coral-heart-rocks-on-lava.jpg": (1446, 1356), "silver-ocean.jpg": (1452, 1362), "heart-rocks-sandstone.jpg": (1340, 1362), "shoreline-pebbles.jpg": (1452, 1360), "pamela-sunset-beach.jpg": (880, 1100), "hearts-of-hendrys-cover.jpg": (1016, 762)}
 
 def img(name, alt, cls="", eager=False):
     w, h = SIZES[name]
