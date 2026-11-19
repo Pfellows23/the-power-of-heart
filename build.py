@@ -377,7 +377,6 @@ books = f'''<section class="page-hero">
 <section class="section" id="hearts-of-hendrys">
   <div class="wrap stack-lg">
     <div class="stack measure">
-      <p class="eyebrow">Projects</p>
       <h2 class="h1-size">Hearts of Hendry's</h2>
       <p class="lede">Listening from the Beach. [A sentence or two introducing the book.]</p>
     </div>
