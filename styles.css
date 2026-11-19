@@ -667,3 +667,17 @@ h2 em { font-family: var(--font-voice); font-style: italic; color: var(--tide); 
 /* Projects: book cover mockups */
 .book-mock { margin: 0; justify-self: center; width: min(100%, 520px); }
 .book-mock img { display: block; width: 100%; height: auto; }
+
+/* Projects: plays in the works */
+.plays { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(1.25rem, 3vw, 2rem); }
+@media (max-width: 760px) { .plays { grid-template-columns: 1fr; } }
+.play { background: var(--foam, #fff); padding: clamp(1.5rem, 3vw, 2.25rem); border-top: 3px solid var(--tide); }
+.play > * + * { margin-top: 0.7rem; }
+.play h3 { font-size: var(--step-3); }
+.play .meta { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--tide); }
+.play-by { font-style: italic; color: var(--driftwood); }
+
+/* Projects page: tighter spacing between projects, less scroll */
+main:has(#in-the-works) .section { padding-block: clamp(2.25rem, 5vw, 3.75rem); }
+main:has(#in-the-works) .section[style*="padding-top"] { padding-top: 0; }
+main:has(#in-the-works) .band { height: clamp(180px, 26vw, 360px); }

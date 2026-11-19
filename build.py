@@ -408,17 +408,26 @@ projects = f'''<section class="page-hero">
 
 {HENDRY}
 
-<section class="section">
+<section class="section" id="in-the-works">
   <div class="wrap stack-lg">
     <div class="stack measure">
       <p class="eyebrow">Artistic projects</p>
-      <h2>More creative work</h2>
-      <p>[Other projects you produce or create: films, photography, prints, events.]</p>
+      <h2>In the <em>works</em></h2>
+      <p>Two acclaimed one-man plays, both performed by Jim Jarrett, coming to Santa Barbara as benefit engagements through Wilder Creative Productions.</p>
     </div>
-    <div class="products">
-{product("[Print or product name]", "[Size or format]", "[$ Price]", "[Description from your current site.]", "PRODUCT_1", "Buy now", "sand")}
-{product("[Print or product name]", "[Size or format]", "[$ Price]", "[Description from your current site.]", "PRODUCT_2", "Buy now", "")}
-{product("[Project name]", "[Type · Year]", "Coming soon", "[One or two sentences about the project.]", "PRODUCT_3", "Learn more", "basalt")}
+    <div class="plays">
+      <article class="play">
+        <p class="meta">Coming soon · Santa Barbara</p>
+        <h3>Vincent</h3>
+        <p class="play-by">By Leonard Nimoy · starring Jim Jarrett</p>
+        <p>Paris, 1890. A week after Vincent van Gogh's death, his brother Theo rents a hall to tell the story he could not speak at the funeral, with Vincent's paintings projected behind him. Seen by a quarter of a million people on four continents.</p>
+      </article>
+      <article class="play">
+        <p class="meta">Coming soon · Santa Barbara</p>
+        <h3>Meisner</h3>
+        <p class="play-by">Created, performed, and directed by Jim Jarrett</p>
+        <p>Two acts, thirty years apart, with the legendary acting teacher Sanford Meisner, brought to life by his last teaching protégé. "As close as you're ever going to get to experiencing the genius of Sanford Meisner." Jon Voight</p>
+      </article>
     </div>
   </div>
 </section>
