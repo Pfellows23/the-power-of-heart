@@ -137,7 +137,7 @@ home = f'''<section class="hero hero-photo" style="--photo: url('images/ocean-sp
 </section>
 <div class="hero-after">
   <div class="wrap">
-    <p class="lede">Coaching rooted in lineages thousands of years old, for the awareness most of modern life has left undiscovered: the intelligence of the heart.</p>
+    <p class="lede">Coaching rooted across ancient lineages and merged with modern-day insight, for the awareness most of modern life has left undiscovered: the intelligence of the heart.</p>
     <div class="actions">
       <a class="btn" href="{BOOKING}" target="_blank" rel="noopener">Book a discovery call</a>
       <a class="btn btn-ghost" href="services.html">Explore services</a>
