@@ -9,8 +9,8 @@ EMAIL = "pamela@thepowerofheart.com"
 BOOKING = "https://calendly.com/pamela-thepowerofheart/30min"
 
 MENU = [("Home", "index.html"), ("About", "about.html"), ("Services", "services.html"),
-        ("Projects", "projects.html"), ("Inspirations", "inspirations.html")]
-FOOTER_MENU = MENU + [("Contact", "contact.html")]
+        ("Projects", [("Books", "books.html"), ("Productions", "productions.html")]), ("Inspirations", "inspirations.html")]
+FOOTER_MENU = [(l, h) for l, h in MENU if isinstance(h, str)][:3] + [("Books", "books.html"), ("Productions", "productions.html"), ("Inspirations", "inspirations.html"), ("Contact", "contact.html")]
 
 FONTS = "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
 
@@ -37,9 +37,14 @@ def book_img(name, alt):
 def stripe(key): return f"https://buy.stripe.com/REPLACE_{key}"
 
 def header(slug):
-    items = "\n".join(
-        f'      <li><a href="{href}"{" aria-current=\"page\"" if href == slug else ""}>{label}</a></li>'
-        for label, href in MENU)
+    def li(label, href):
+        if isinstance(href, list):
+            cur = any(h == slug for _, h in href)
+            subs = "".join(f'<li><a href="{h}"{" aria-current=\"page\"" if h == slug else ""}>{l}</a></li>' for l, h in href)
+            return (f'      <li class="has-sub"><details><summary{" class=\"current\"" if cur else ""}>{label}</summary>'
+                    f'<ul class="sub">{subs}</ul></details></li>')
+        return f'      <li><a href="{href}"{" aria-current=\"page\"" if href == slug else ""}>{label}</a></li>'
+    items = "\n".join(li(l, h) for l, h in MENU)
     return f'''<header id="site-header">
   <div class="bar">
     <a class="brand" href="index.html">{NAME}</a>
@@ -136,7 +141,7 @@ home = f'''<section class="hero hero-photo" style="--photo: url('images/ocean-sp
     <div class="hero-text stack-lg">
       <h1>Ancient wisdom.<br><em>Undiscovered awareness.</em></h1>
     </div>
-    <a class="hero-cover" href="projects.html" aria-label="The Hearts of Mauna Kea book">
+    <a class="hero-cover" href="books.html" aria-label="The Hearts of Mauna Kea book">
       {img("coral-heart-in-hand.jpg", "The Hearts of Mauna Kea: a heart-shaped piece of coral held on a sandy beach")}
     </a>
   </div>
@@ -184,7 +189,7 @@ home = f'''<section class="hero hero-photo" style="--photo: url('images/ocean-sp
       <article class="path">
         <h3>Projects &amp; Books</h3>
         <p>The Hearts of Mauna Kea pairs photographs and sentiments from a special place and time, where the heart-shaped rocks that arrived carried a depth of heartfulness and meaning.</p>
-        <a class="more" href="projects.html">See projects</a>
+        <a class="more" href="books.html">See the books</a>
       </article>
     </div>
   </div>
@@ -342,7 +347,7 @@ services_schema = {"@context": "https://schema.org", "@type": "Service", "name":
                    "serviceType": "Life coaching", "areaServed": "Worldwide",
                    "description": "Inner alignment coaching for individual clients, connecting them with peace, fulfillment, joy, clarity, and abundance."}
 
-projects = f'''<section class="page-hero">
+books = f'''<section class="page-hero">
   <div class="wrap stack measure">
     <p class="eyebrow">Projects</p>
     <h1>The Hearts of Mauna Kea</h1>
@@ -405,14 +410,13 @@ projects = f'''<section class="page-hero">
   </div>
 </section>
 {wave("wave-flip")}
+{CTA}'''
 
-{HENDRY}
-
-<section class="section" id="in-the-works">
+productions = f'''<section class="page-hero" id="in-the-works">
   <div class="wrap stack-lg">
     <div class="stack measure">
-      <p class="eyebrow">Artistic projects</p>
-      <h2>In the <em>works</em></h2>
+      <p class="eyebrow">Productions</p>
+      <h1>In the <em>works</em></h1>
       <p>Two acclaimed one-man plays, both performed by Jim Jarrett, coming to Santa Barbara as benefit engagements through Wilder Creative Productions.</p>
     </div>
     <div class="plays">
@@ -440,7 +444,7 @@ projects = f'''<section class="page-hero">
 {CTA}'''
 
 book_schema = {"@context": "https://schema.org", "@type": "Book", "name": "The Hearts of Mauna Kea",
-               "author": {"@type": "Person", "name": "Pamela"}, "url": BASE + "/projects.html",
+               "author": {"@type": "Person", "name": "Pamela"}, "url": BASE + "/books.html",
                "isPartOf": {"@type": "BookSeries", "name": "The Hearts of…"},
                "about": "Photographs and sentiments from a special place and time, where the heart-shaped rocks that arrived carried a depth of heartfulness and meaning."}
 
@@ -641,7 +645,7 @@ book_preview = f'''<section class="section book">
         <h2>Continue the journey</h2>
         <p>The full book holds every place, sentiment, and heart rock.</p>
         <div class="actions"><a class="btn" href="#request-book">Buy the book</a></div>
-        <nav class="book-nav" aria-label="Book pages"><a class="btn btn-ghost btn-small" href="#p6">Previous</a><span class="book-count">7 / 7</span><a class="btn btn-small" href="projects.html">Back to Projects</a></nav>
+        <nav class="book-nav" aria-label="Book pages"><a class="btn btn-ghost btn-small" href="#p6">Previous</a><span class="book-count">7 / 7</span><a class="btn btn-small" href="books.html">Back to Books</a></nav>
       </div>
     </article>
   </div>
@@ -681,15 +685,17 @@ pages = [
      "Meet Pamela: alignment coach drawing on leadership training, Women's Energetics, 1,000+ hours of yoga certification, and the Meisner Technique.", about, None),
     ("services.html", "Coaching & Spiritual Teaching Services | The Power of Heart",
      "Inner alignment coaching sessions, packages, and spiritual teaching programs. Book a free discovery call or pay securely online.", services, services_schema),
-    ("projects.html", "The Hearts of Mauna Kea Book & Creative Projects | The Power of Heart",
-     "The Hearts of Mauna Kea pairs photographs and sentiments from a special place and time, with heart-shaped rocks that carry a depth of heartfulness and meaning. Order your copy.", projects, book_schema),
+    ("books.html", "The Hearts of… Books | The Power of Heart",
+     "The Hearts of Mauna Kea and Hearts of Hendry's pair photographs and sentiments from special places, with heart-shaped rocks that carry a depth of heartfulness and meaning. Order your copy.", books, book_schema),
+    ("productions.html", "Productions: Vincent & Meisner in Santa Barbara | The Power of Heart",
+     "Two acclaimed one-man plays performed by Jim Jarrett, Vincent by Leonard Nimoy and Meisner, coming to Santa Barbara as benefit engagements.", productions, None),
     ("inspirations.html", "Inspirations: Heart Rocks & Wisdom Teachings | The Power of Heart",
      "Heart rocks found in nature, wisdom teachings, and reflections from Mauna Kea and Hendry's Beach in Santa Barbara.", inspirations, None),
     ("contact.html", "Book a Free Discovery Call | The Power of Heart",
      "Book a free 30-minute discovery call for heart-focused coaching, or get in touch with The Power of Heart.", contact, None),
 ]
 
-for f in ["request-book.html", "coaching.html", "creative.html", "books.html", "book-a-call.html", "site.js"]:
+for f in ["request-book.html", "coaching.html", "creative.html", "book-a-call.html", "site.js", "projects.html"]:
     p = os.path.join(OUT, f)
     if os.path.exists(p): os.remove(p)
 

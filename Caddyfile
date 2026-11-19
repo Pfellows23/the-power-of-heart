@@ -6,6 +6,10 @@
 	root * /srv
 	encode zstd gzip
 
+	# Projects was split into Books and Productions
+	redir /projects /books 301
+	redir /projects.html /books.html 301
+
 	# Lets /about work as well as /about.html
 	try_files {path} {path}.html
 
