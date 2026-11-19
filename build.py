@@ -328,20 +328,6 @@ services = f'''<section class="page-hero">
   </div>
 </section>
 
-{wave()}
-<section class="section section-sand" id="teaching">
-  <div class="wrap stack-lg">
-    <div class="stack measure">
-      <h2>Spiritual teaching</h2>
-      <p>[Teaching copy from your current Products &amp; Programs page: classes, circles, workshops, or retreats.]</p>
-    </div>
-    <div class="products">
-{product("[Program or workshop name]", "[Dates · Location or online]", "[$ Price]", "[Description from your current site.]", "PROGRAM_1", "Register &amp; pay")}
-{product("[Program or workshop name]", "[Dates · Location or online]", "[$ Price]", "[Description from your current site.]", "PROGRAM_2", "Register &amp; pay")}
-    </div>
-    <p class="secure-note">Payments are processed securely by Stripe. You will get a receipt by email.</p>
-  </div>
-</section>
 {CTA}'''
 
 services_schema = {"@context": "https://schema.org", "@type": "Service", "name": "Heart-focused coaching and spiritual teaching",
@@ -703,7 +689,7 @@ pages = [
     ("about.html", "About Pamela | The Power of Heart",
      "Meet Pamela: alignment coach drawing on leadership training, Women's Energetics, 1,000+ hours of yoga certification, and the Meisner Technique.", about, None),
     ("services.html", "Coaching & Spiritual Teaching Services | The Power of Heart",
-     "Inner alignment coaching sessions, packages, and spiritual teaching programs. Book a free discovery call or pay securely online.", services, services_schema),
+     "Alignment coaching sessions and a three-month coaching program rooted in ancient lineages. Book a free discovery call.", services, services_schema),
     ("books.html", "The Hearts of… Books | The Power of Heart",
      "The Hearts of Mauna Kea and Hearts of Hendry's pair photographs and sentiments from special places, with heart-shaped rocks that carry a depth of heartfulness and meaning. Order your copy.", books, book_schema),
     ("productions.html", "Productions: Vincent & Meisner in Santa Barbara | The Power of Heart",
