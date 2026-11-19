@@ -744,3 +744,9 @@ main:has(#hearts-of-hendrys, #in-the-works) .band { height: clamp(180px, 26vw, 3
 @media (max-width: 560px) { .about-hero .photo img { inset: 7px 7px 26px; width: calc(100% - 14px); height: calc(100% - 33px); } }
 
 .about-hero .photo img { object-position: 50% 40%; }
+
+/* Intro (lede) text in Cormorant Garamond, sized up for legibility (trial, 2026-11-19) */
+.lede, .hero-after .lede, .hero-photo .lede {
+  font-family: "Cormorant Garamond", Georgia, serif; font-weight: 400;
+  font-size: clamp(1.35rem, 2.1vw, 1.6rem); line-height: 1.45; color: var(--basalt);
+}
