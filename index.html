@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap">
-<link rel="stylesheet" href="styles.css?v=9f97af29">
+<link rel="stylesheet" href="styles.css?v=fef6d440">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -124,7 +124,7 @@
       <h2>The Hearts of Mauna Kea</h2>
       <p>The first book in The Hearts of… series pairs photographs and sentiments from a special place and time, where the heart-shaped rocks that arrived carried a depth of heartfulness and meaning.</p>
       <div class="actions">
-        <a class="btn" href="request-book.html">Buy the book</a>
+        <a class="btn" href="#request-book">Buy the book</a>
         <a class="btn btn-ghost" href="book-preview.html">Look inside the book</a>
       </div>
       <p class="secure-note">The book preview is password protected.</p>
@@ -144,6 +144,28 @@
   </div>
 </section>
 </main>
+<div class="modal" id="request-book" role="dialog" aria-modal="true" aria-labelledby="request-book-title">
+  <a class="modal-backdrop" href="#_" aria-label="Close"></a>
+  <div class="modal-card">
+    <a class="modal-close" href="#_" aria-label="Close">&times;</a>
+    <p class="eyebrow">The Hearts of Mauna Kea</p>
+    <h2 id="request-book-title">Request a copy</h2>
+    <p class="modal-note">The first edition has sold out. Leave your details and I will be in touch as soon as more copies are available.</p>
+    <form class="request-form" action="https://formsubmit.co/pamela@thepowerofheart.com" method="POST">
+      <input type="hidden" name="_subject" value="Book request: The Hearts of Mauna Kea">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="Book" value="The Hearts of Mauna Kea">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="form-row">
+        <label>Name<input type="text" name="name" autocomplete="name" required></label>
+        <label>Email<input type="email" name="email" autocomplete="email" required></label>
+      </div>
+      <label class="copies">Copies<input type="number" name="copies" min="1" value="1" inputmode="numeric"></label>
+      <label><span>Message <span class="muted">(optional)</span></span><textarea name="message" rows="3"></textarea></label>
+      <button class="btn" type="submit">Send request</button>
+    </form>
+  </div>
+</div>
 <footer id="site-footer">
   <div class="footer-inner">
     <div>
