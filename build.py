@@ -533,31 +533,8 @@ WISDOM = f'''<section class="section section-sand">
   </div>
 </section>'''
 
-inspirations = f'''<section class="page-hero">
-  <div class="wrap stack measure">
-    <p class="eyebrow">Inspirations</p>
-    <h1>Inspirations for <em>a soul-aligned life</em></h1>
-    <p class="lede">Heart rocks, wisdom teachings, film, and reflections gathered along the way. Take what speaks to you.</p>
-  </div>
-</section>
-
-{HENDRY}
-
-<section class="section" id="film">
-  <div class="wrap stack-lg">
-    <div class="stack measure">
-      <p class="eyebrow">Film</p>
-      <h2>Film as <em>a teacher of life</em></h2>
-      <p>A great film can show us ourselves in two hours: what we love, what we fear, and what we are capable of. Storytelling is one of the oldest ways the heart has learned, and it is an art worth preserving. These are scenes I return to.</p>
-    </div>
-{film(*FILMS[0], feature=True)}
-{more_films()}
-  </div>
-</section>
-
-{'' if True else WISDOM}
-
-<section class="section">
+# Hidden until Pamela decides what goes on this page (2026-11-19).
+ROCKS_AND_REFLECTIONS = f'''<section class="section">
   <div class="wrap stack-lg">
     <div class="stack measure">
       <p class="eyebrow">Heart rocks</p>
@@ -585,6 +562,33 @@ inspirations = f'''<section class="page-hero">
     </div>
   </div>
 </section>
+'''
+
+inspirations = f'''<section class="page-hero">
+  <div class="wrap stack measure">
+    <p class="eyebrow">Inspirations</p>
+    <h1>Inspirations for <em>a soul-aligned life</em></h1>
+    <p class="lede">Films and stories gathered along the way. Take what speaks to you.</p>
+  </div>
+</section>
+
+{HENDRY}
+
+<section class="section" id="film">
+  <div class="wrap stack-lg">
+    <div class="stack measure">
+      <p class="eyebrow">Film</p>
+      <h2>Film as <em>a teacher of life</em></h2>
+      <p>A great film can show us ourselves in two hours: what we love, what we fear, and what we are capable of. Storytelling is one of the oldest ways the heart has learned, and it is an art worth preserving. These are scenes I return to.</p>
+    </div>
+{film(*FILMS[0], feature=True)}
+{more_films()}
+  </div>
+</section>
+
+{'' if True else WISDOM}
+
+{'' if True else ROCKS_AND_REFLECTIONS}
 {CTA}'''
 
 book_preview = f'''<section class="section book">
