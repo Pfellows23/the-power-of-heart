@@ -660,9 +660,9 @@ h2 em { font-family: var(--font-voice); font-style: italic; color: var(--tide); 
 :root { --step-4: clamp(2.1rem, 4.2vw, 2.9rem); --step-3: clamp(1.75rem, 3.2vw, 2.2rem); }
 .about-intro h1 { font-size: var(--step-4); }
 /* About portrait: 5x7 print proportion, a bit larger */
-.about-hero .photo { width: min(34%, 350px); aspect-ratio: 5 / 7; }
+.about-hero .photo { width: min(42%, 440px); aspect-ratio: 4 / 5; }
 .about-hero .photo img { object-position: 30% 40%; }
-@media (max-width: 560px) { .about-hero .photo { width: 44%; max-width: 190px; } }
+@media (max-width: 560px) { .about-hero .photo { width: 50%; max-width: 230px; } }
 
 /* Projects: book cover mockups */
 .book-mock { margin: 0; justify-self: center; width: min(100%, 520px); }
