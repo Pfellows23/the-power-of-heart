@@ -180,12 +180,12 @@ home = f'''<section class="hero hero-photo" style="--photo: url('images/ocean-sp
       <article class="path">
         <h3>Alignment Coaching</h3>
         <p>One-to-one work, grounded in ancient practice, to bring the way you live into line with what you most deeply know.</p>
-        <a class="more" href="services.html#coaching">Coaching services</a>
+        <a class="more" href="services.html">Coaching services</a>
       </article>
       <article class="path">
         <h3>Spiritual Teaching</h3>
         <p>Teachings, gatherings, and practices that help you reconnect with your purpose and the wisdom within.</p>
-        <a class="more" href="services.html#teaching">Teaching offerings</a>
+        <a class="more" href="services.html">Teaching offerings</a>
       </article>
       <article class="path">
         <h3>Projects &amp; Books</h3>
