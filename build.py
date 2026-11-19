@@ -282,14 +282,15 @@ about = f'''<section class="page-hero about-hero">
 </section>
 {CTA}'''
 
-def product(title, meta, price, text, key, label="Buy now", photo=None):
+def product(title, meta, price, text, key, label="Buy now", photo=None, href=None):
     ph = ""
+    ext = ' target="_blank" rel="noopener"' if href else ""
     return f'''      <article class="product">
         {ph}<h3>{title}</h3>
         <p class="meta">{meta}</p>
         <p class="price">{price}</p>
         <p>{text}</p>
-        <a class="btn" href="{stripe(key)}">{label}</a>
+        <a class="btn" href="{href or stripe(key)}"{ext}>{label}</a>
       </article>'''
 
 REEL_FRAMES = [("ocean-sparkle.jpg", "Sunlight sparkling on the ocean"), ("coral-heart-in-hand.jpg", "A heart-shaped piece of coral held in a hand"), ("golden-water.jpg", "Golden evening light on gentle waves"), ("sea-foam.jpg", "White sea foam on the sand"), ("heart-rocks-sandstone.jpg", "Heart-shaped stones beside a sandstone boulder"), ("silver-ocean.jpg", "Silver light on the open ocean"), ("shoreline-pebbles.jpg", "Pebbles along the shoreline")]
@@ -320,9 +321,9 @@ services = f'''<section class="page-hero">
       <p>Specialized coaching begins there. Together we listen for what truly resonates, and empower what drives the mind, so your choices, your work, and your relationships line up with who you really are.</p>
     </div>
     <div class="products">
-{product("Discovery Call", "30 minutes · Zoom or phone", "Free", "A first conversation to see if we are a good fit.", "", "Book a time").replace(stripe(""), BOOKING)}
-{product("Single Coaching Session", "45 minutes", "$108", "One session, one commitment: to meet you where you are, bring what you know into alignment with how you live, and leave with a clear path forward.", "SINGLE_SESSION", "Book &amp; pay")}
-{product("Coaching Package", "[Number of sessions]", "[$ Price]", "[Description from your current site.]", "COACHING_PACKAGE", "Book &amp; pay")}
+{product("Discovery Call", "30 minutes · Zoom or phone", "Free", "A first conversation to see if we are a good fit.", "", "Book", href=BOOKING)}
+{product("Single Coaching Session", "45 minutes", "$108", "One session, one commitment: to meet you where you are, bring what you know into alignment with how you live, and leave with a clear path forward.", "", "Book", href=BOOKING)}
+{product("Three-Month Coaching", "6 sessions · every other week", "$540", "The work I recommend. Three months gives real change time to take root: we set the intention together, practice it in your life, and return to it every two weeks until it holds. Six sessions for the price of five.", "", "Book", href=BOOKING)}
     </div>
   </div>
 </section>
