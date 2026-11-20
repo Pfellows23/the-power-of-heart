@@ -308,7 +308,7 @@ REEL_INSPIRATIONS = [
     ("insp-happiness-sign.jpg", "A sign: Happiness is letting go of what you think your life is supposed to look like"),
     ("insp-choose-love.jpg", "A framed sign: Choose love. Be kind. Find joy. Feel happy. Smile."),
 ]
-REEL_ALL = REEL_FRAMES + REEL_INSPIRATIONS
+REEL_ALL = REEL_FRAMES  # REEL_INSPIRATIONS removed from the reel at Pamela's request (2026-11-20)
 REEL_SECS = 6
 def _frames():
     return "".join(f'<img src="images/{n}" alt="{a}" width="800" height="600" style="--i:{i}" loading="{'eager' if i < 2 else 'lazy'}" decoding="async">' for i, (n, a) in enumerate(REEL_ALL))
@@ -317,9 +317,10 @@ def _reel_style():
     line_end = len(REEL_FRAMES) * one
     return (f"<style>.screen img {{ animation-duration: {total}s, 0.9s; }}"
             f"@keyframes screen-show {{ 0% {{ opacity: 0; }} {one*0.18:.2f}% {{ opacity: 1; }} {one:.2f}% {{ opacity: 1; }} {one*1.18:.2f}% {{ opacity: 0; }} 100% {{ opacity: 0; }} }}"
-            f".screen-line {{ animation: screen-line {total}s linear infinite; }}"
+            + ((f".screen-line {{ animation: screen-line {total}s linear infinite; }}"
             f"@keyframes screen-line {{ 0%, {line_end - one*0.25:.2f}% {{ opacity: 1; }} {line_end:.2f}%, {100 - one*0.2:.2f}% {{ opacity: 0; }} 100% {{ opacity: 1; }} }}"
-            f"@media (prefers-reduced-motion: reduce) {{ .screen-line {{ animation: none; }} }}</style>")
+            f"@media (prefers-reduced-motion: reduce) {{ .screen-line {{ animation: none; }} }}") if len(REEL_ALL) > len(REEL_FRAMES) else "")
+            + "</style>")
 REEL = f'''<figure class="screen-wrap">
   {_reel_style()}
   <div class="screen">
