@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
-Disallow: /book-preview.html
+Disallow: /book-preview
+Disallow: /book-login
 
 Sitemap: https://www.thepowerofheart.com/sitemap.xml
