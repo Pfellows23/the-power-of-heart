@@ -434,7 +434,9 @@ books = f'''<section class="page-hero">
     <a class="btn btn-ghost" href="book-preview.html">Look inside the book</a>
   </div>
   <a class="wrap inside-photo" href="book-preview.html" aria-label="Look inside The Hearts of Mauna Kea">
-    {img("stone-buddha.jpg", "A stone Buddha resting beneath a tree in Hawaiian sunlight")}
+    <span class="inside-stage" style="--photo: url('images/golden-water.jpg')">
+      <img class="inside-framed" src="images/stone-buddha.jpg" alt="A stone Buddha resting beneath a tree in Hawaiian sunlight" width="1013" height="758" loading="lazy" decoding="async">
+    </span>
   </a>
 </section>
 {wave("wave-flip")}
