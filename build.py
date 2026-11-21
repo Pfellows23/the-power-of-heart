@@ -433,6 +433,9 @@ books = f'''<section class="page-hero">
     </div>
     <a class="btn btn-ghost" href="book-preview.html">Look inside the book</a>
   </div>
+  <a class="wrap inside-photo" href="book-preview.html" aria-label="Look inside The Hearts of Mauna Kea">
+    {img("golden-water.jpg", "Golden evening light on gentle waves")}
+  </a>
 </section>
 {wave("wave-flip")}
 {CTA}'''
