@@ -594,7 +594,7 @@ inspirations = f'''<section class="page-hero">
   <div class="wrap stack measure">
     <p class="eyebrow">Inspirations</p>
     <h1>Inspirations for <em>a soul-aligned life</em></h1>
-    <p class="lede">Films and stories gathered along the way. Take what speaks to you.</p>
+    <p class="lede">Films, quotes, and writing gathered along the way. Take what speaks to you.</p>
   </div>
 </section>
 
