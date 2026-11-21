@@ -404,14 +404,14 @@ books = f'''<section class="page-hero">
   <div class="wrap stack-lg">
     <div class="stack measure">
       <h2 class="h1-size">Hearts of Hendry's</h2>
-      <p class="lede">Listening from the Beach. [A sentence or two introducing the book.]</p>
+      <p class="lede">Listening from the Beach.</p>
     </div>
     <div class="split">
       {book_img("book-hearts-of-hendrys.webp", "Hearts of Hendry's, Listening from the Beach: book cover showing a heart-shaped stone held up against a sunset over the ocean")}
       <div class="stack">
         <p class="eyebrow">Book two of The Hearts of… series</p>
         <h3 class="h2-size">About the book</h3>
-        <p>[Book description.]</p>
+        <p>The second book in the Hearts of… series turns to Hendry's Beach in Santa Barbara. Tide-worn heart rocks, coastal light and the quiet teachings of this shoreline, gathered over years of experiencing it.</p>
         <dl class="field-note">
           <dt>Price</dt><dd>$88</dd>
           <dt>Place</dt><dd>Hendry's Beach, Santa Barbara, California</dd>
