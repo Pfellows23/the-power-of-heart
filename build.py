@@ -736,6 +736,29 @@ for f in ["request-book.html", "coaching.html", "creative.html", "book-a-call.ht
 
 for slug, t, d, b, s in pages:
     open(os.path.join(OUT, slug), "w").write(page(slug, t, d, b, s))
+# Sign-in page for the private book area. server/book_auth.py serves it and fills in
+# <!--BOOK_ERROR-->; the form posts to /book-login (handled by that helper, not static).
+book_login = f'''<section class="section book-login">
+  <div class="wrap">
+    <div class="login-card stack">
+      <p class="eyebrow">Inside The Hearts of Mauna Kea</p>
+      <h1>Turn the pages</h1>
+      <p>The book preview is private. Enter your email and the password you were given to step inside.</p>
+      <!--BOOK_ERROR-->
+      <form class="request-form" method="post" action="/book-login">
+        <input type="hidden" name="next" value="/book-preview.html">
+        <label>Email<input type="email" name="email" autocomplete="email" required></label>
+        <label>Password<input type="password" name="password" autocomplete="current-password" required></label>
+        <button class="btn" type="submit">Open the book</button>
+      </form>
+      <p class="secure-note">Don't have the password? <a href="contact.html">Get in touch</a>.</p>
+    </div>
+  </div>
+</section>'''
+bl = page("book-login.html", "Book Preview Sign In | The Power of Heart", "Sign in to preview The Hearts of Mauna Kea.", book_login)
+bl = bl.replace('<meta name="robots" content="index, follow">', '<meta name="robots" content="noindex, nofollow">')
+open(os.path.join(OUT, "book-login.html"), "w").write(bl)
+
 # Private book preview: not in the menu, sitemap, or search results.
 bp = page("book-preview.html", "Book Preview | The Power of Heart", "A page-by-page preview of The Hearts of Mauna Kea.", book_preview)
 bp = bp.replace('<meta name="robots" content="index, follow">', '<meta name="robots" content="noindex, nofollow">')
@@ -743,5 +766,5 @@ open(os.path.join(OUT, "book-preview.html"), "w").write(bp)
 
 urls = "\n".join(f"  <url><loc>{BASE}/{'' if s == 'index.html' else s}</loc><lastmod>2026-10-30</lastmod></url>" for s, *_ in pages)
 open(os.path.join(OUT, "sitemap.xml"), "w").write(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}\n</urlset>\n')
-open(os.path.join(OUT, "robots.txt"), "w").write(f"User-agent: *\nAllow: /\nDisallow: /book-preview.html\n\nSitemap: {BASE}/sitemap.xml\n")
+open(os.path.join(OUT, "robots.txt"), "w").write(f"User-agent: *\nAllow: /\nDisallow: /book-preview\nDisallow: /book-login\n\nSitemap: {BASE}/sitemap.xml\n")
 print("built")
