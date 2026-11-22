@@ -617,6 +617,24 @@ inspirations = f'''<section class="page-hero">
   </div>
 </section>
 
+<section class="section section-sand" id="reading">
+  <div class="wrap split reading">
+    <a class="book-cover-link" href="https://www.amazon.com/dp/1572245379" target="_blank" rel="noopener" aria-label="Buy The Untethered Soul by Michael A. Singer">
+      <span class="book-cover" role="img" aria-label="Cover of The Untethered Soul by Michael A. Singer">
+        <span class="book-cover-fallback"><em>The Untethered Soul</em><small>Michael A. Singer</small></span>
+        <span class="book-cover-img" style="--cover: url('https://covers.openlibrary.org/b/isbn/9781572245372-L.jpg')"></span>
+      </span>
+    </a>
+    <div class="stack">
+      <p class="eyebrow">Reading</p>
+      <h2>The Untethered Soul</h2>
+      <p class="play-by">Michael A. Singer</p>
+      <p>A clear, practical guide to the oldest question in the wisdom traditions: who is the one who notices your thoughts? Singer shows how to stop being pulled along by the noise of the mind and rest in the quiet awareness beneath it.</p>
+      <div class="actions"><a class="btn" href="https://www.amazon.com/dp/1572245379" target="_blank" rel="noopener">Get the book</a></div>
+    </div>
+  </div>
+</section>
+
 {'' if True else WISDOM}
 
 {'' if True else ROCKS_AND_REFLECTIONS}
