@@ -349,7 +349,7 @@ services = f'''<section class="page-hero">
     <div class="products">
 {product("Discovery Call", "30 minutes · Zoom or phone", "Free", "A first conversation to see if we are a good fit.", "", "Book", href=BOOKING)}
 {product("Single Coaching Session", "45 minutes", "$108", "One session, one commitment: to meet you where you are, bring what you know into alignment with how you live, and leave with a clear path forward.", "", "Book", href=BOOKING)}
-{product("Three-Month Coaching", "6 sessions · every other week", "$540", "The work I recommend. Three months gives real change time to take root: we set the intention together, practice it in your life, and return to it every two weeks until it holds. Six sessions for the price of five.", "", "Book", href=BOOKING)}
+{product("Three-Month Coaching", "6 sessions · every other week", "$444", "The work I recommend. Insight can arrive in a single session, but lasting change takes root over time. Across three months we set a clear intention, carry it into your daily life, and return to it every two weeks to refine what you are learning, until alignment is no longer something you visit but the way you live.", "", "Book", href=BOOKING)}
     </div>
   </div>
 </section>
