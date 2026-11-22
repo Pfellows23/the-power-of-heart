@@ -29,6 +29,9 @@
 	}
 	header /images/* Cache-Control "public, max-age=604800"
 	header /styles.css Cache-Control "public, max-age=86400"
+	# Pages: browsers must re-check with the server every time, so updates show at once
+	@pages not path /images/* /styles.css /book-preview /book-preview.html /book-preview-*
+	header @pages Cache-Control "no-cache"
 
 	file_server
 }
