@@ -520,7 +520,7 @@ def rock(cls, place, note):
 
 # Film clips on the Inspirations page. Paste a YouTube link in place of "" to show the video.
 FILMS = [
-    ("Roberto Benigni on the Ten Commandments", "[A line or two on why this clip moves you.]", "https://youtu.be/EatwzkvOWf4"),
+    ("Roberto Benigni on the Ten Commandments", "", "https://youtu.be/EatwzkvOWf4"),
     ("[Film title and scene]", "[A line or two on what this scene teaches.]", ""),
 ]
 def more_films():
@@ -540,7 +540,7 @@ def film(title, note, url, feature=False):
     return f'''      <article class="{cls}">
         <div class="film-frame">{frame}</div>
         <h3>{title}</h3>
-        <p>{note}</p>{watch}
+        {f'<p>{note}</p>' if note else ''}{watch}
       </article>'''
 
 def teaching(text, place):
