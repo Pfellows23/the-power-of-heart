@@ -787,3 +787,7 @@ main:has(#hearts-of-hendrys, #in-the-works) .band { height: clamp(180px, 26vw, 3
 }
 .book-cover-fallback small { font-family: var(--font-body); font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; }
 .book-cover-img { position: absolute; inset: 0; background: var(--cover) center / cover no-repeat; }
+
+/* Books: framed Buddha photo on its own (no background image), 2026-11-22 */
+.inside-framed { height: auto; width: 100%; max-width: 760px; margin: 0 auto; }
+@media (max-width: 560px) { .inside-framed { height: auto; max-width: 100%; } }
