@@ -762,8 +762,6 @@ open(os.path.join(OUT, "book-login.html"), "w").write(bl)
 # Private book preview: not in the menu, sitemap, or search results.
 bp = page("book-preview.html", "Book Preview | The Power of Heart", "A page-by-page preview of The Hearts of Mauna Kea.", book_preview)
 bp = bp.replace('<meta name="robots" content="index, follow">', '<meta name="robots" content="noindex, nofollow">')
-# Extra fonts standing in for the book's Mixbook fonts (script titles, small caps)
-bp = bp.replace('<link rel="stylesheet" href="styles.css', '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&family=Bentham&family=Bodoni+Moda:opsz,wght@6..96,400&family=Cormorant+SC:wght@500;600&family=Mr+Dafoe&display=swap">\n<link rel="stylesheet" href="styles.css', 1)
 open(os.path.join(OUT, "book-preview.html"), "w").write(bp)
 
 urls = "\n".join(f"  <url><loc>{BASE}/{'' if s == 'index.html' else s}</loc><lastmod>2026-10-30</lastmod></url>" for s, *_ in pages)

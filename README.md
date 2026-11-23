@@ -79,7 +79,9 @@ book-preview.html is a page-turning copy of The Hearts of Mauna Kea, behind the 
 - `server/mixbook-book.json`: the book's layout, exported from the Mixbook share link.
 - `server/mixbook-svg.json`: Mixbook's own drawing (SVG) of every page, copied from the
   Mixbook editor preview, so photos and each word sit exactly where they are in the book.
-  Mixbook's fonts are swapped for close Google Fonts (map in `FACES` in the importer).
+  The words on each page are pictures (`book-preview-text/pNNN.webp`, behind the sign-in)
+  drawn in the book's real fonts inside the Mixbook editor, since those fonts are licensed
+  to Mixbook and can't be served as web fonts.
 - `server/mixbook_import.py`: turns those into `server/book-pages.json` (pages for the
   reader) and `server/book-text.md` (the text of every page).
 - `server/book-reader.js`: the page-turning (arrows, keyboard, swipe, slider).
