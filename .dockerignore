@@ -6,3 +6,8 @@ Dockerfile
 railway.json
 build.py
 README.md
+server/book-pages.json
+server/mixbook-book.json
+server/book-text.md
+server/mixbook_import.py
+server/book-reader.js

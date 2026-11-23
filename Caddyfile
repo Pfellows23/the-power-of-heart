@@ -10,6 +10,9 @@
 	redir /projects /books 301
 	redir /projects.html /books.html 301
 
+	# Helper and source files are never served (the book's data lives in server/)
+	respond /server/* 404
+
 	# Private book area: everything named book-preview* needs a sign-in
 	# (visitor email + shared password), checked by server/book_auth.py.
 	# New pages for the book experience go in as book-preview-<name>.html.
