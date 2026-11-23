@@ -11,3 +11,4 @@ server/mixbook-book.json
 server/book-text.md
 server/mixbook_import.py
 server/book-reader.js
+server/mixbook-svg.json
