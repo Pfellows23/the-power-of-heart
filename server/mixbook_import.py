@@ -39,7 +39,7 @@ def box(i):
 
 def crop(fw, fh, iw, ih, ox, oy):
     return (f"width:{pct(iw / fw)};height:{pct(ih / fh)};"
-            f"left:{pct(0.5 + (ox - iw / 2) / fw)};top:{pct(0.5 + (oy - ih / 2) / fh)}")
+            f"left:{pct(ox / fw)};top:{pct(oy / fh)}")  # Mixbook places the image's top-left corner at the frame's top-left + offset
 
 def span_style(attrs):
     a = dict(re.findall(r'([a-z-]+)="([^"]*)"', attrs))
@@ -82,13 +82,21 @@ def render(pg, n):
         # background box is 1.36655 x 1.07125, centred on the page
         bw, bh = 1.36655, 1.07125
         frame = {"x": 0, "y": 0, "w": bw, "h": bh}
-        parts.append(f'<div class="mb-photo" style="{box(frame)}"><img src="{bg["img"]}" alt="" style="{crop(bw, bh, bg["iw"], bg["ih"], bg["ox"], bg["oy"])}" loading="lazy" decoding="async"></div>')
+        flip = ";transform:scaleX(-1)" if bg.get("flip") else ""
+        parts.append(f'<div class="mb-photo" style="{box(frame)}"><img src="{bg["img"]}" alt="" style="{crop(bw, bh, bg["iw"], bg["ih"], bg["ox"], bg["oy"])}{flip}" loading="lazy" decoding="async"></div>')
         imgs.append(bg["img"])
     for i in pg["items"]:
         if i["t"] == "p":
             if not i.get("src"): continue
             st = crop(i["w"], i["h"], i["iw"], i["ih"], i["ox"], i["oy"])
-            if i.get("flip"): st += ";transform:scaleX(-1)"
+            tf = []
+            if i.get("irot"): tf.append(f"rotate({i['irot']}deg)")   # Mixbook turns the image about its top-left corner
+            if i.get("flip"): tf.append("scaleX(-1)")
+            if tf: st += ";transform-origin:0 0;transform:" + " ".join(tf)
+            for fx in i.get("fx") or []:
+                m = (fx.get("color_matrix") or "").split()
+                if len(m) == 20 and m[0] == m[6] == m[12] and float(m[0]) != 1:
+                    st += f";filter:brightness({float(m[0]) ** (1 / 2.2):.2f})"  # Mixbook applies it in linear light
             extra = f";border-radius:{i['br']}px" if i.get("br") else ""
             parts.append(f'<div class="mb-photo" style="{box(i)}{extra}"><img src="{i["src"]}" alt="" style="{st}" decoding="async"></div>')
             imgs.append(i["src"])
