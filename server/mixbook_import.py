@@ -1,8 +1,9 @@
 """Turn the Mixbook layout of The Hearts of Mauna Kea (server/mixbook-book.json, exported
 from the Mixbook share link) into the page list the book reader uses (server/book-pages.json).
 
-Every Mixbook page is rebuilt as HTML: photos and text boxes placed where they sit in
-the book, so the text stays sharp at any size. Mixbook's own fonts are swapped for close
+Each page is Mixbook's own drawing of it (server/mixbook-svg.json, exported from the
+Mixbook editor), so photos and every word sit exactly where they are in the book and the
+text stays sharp at any size. (Without that file, pages are rebuilt as HTML instead.) Mixbook's own fonts are swapped for close
 matches from Google Fonts. Photos still load from Mixbook for now (their largest size,
 1400 px); swap in the original photos later by changing PHOTO_BASE / the src values.
 
@@ -118,7 +119,40 @@ order = [(-1, "Front cover")] + [(k, f"Page {k}") for k in range(1, 158)] + [(-2
 out = []
 for pos, label in order:
     out.append(render(pages[pos], label))
-json.dump({"aspect": AR, "pages": out}, open(os.path.join(HERE, "book-pages.json"), "w"), ensure_ascii=False, separators=(",", ":"))
+# Mixbook's own drawing of each page (exported from its editor as SVG): every word and
+# photo sits exactly where the book has it. When present it replaces the HTML rebuild above.
+SVG_FILE = os.path.join(HERE, "mixbook-svg.json")
+FACES = {  # Mixbook font -> close Google Font (family, weight[, size factor])
+    "Above the Beyond Serif": ("'Cormorant Garamond', Georgia, serif", 500),
+    "Didot New": ("'Bodoni Moda', 'Cormorant Garamond', Georgia, serif", 400),
+    "May Wilde": ("'Mr Dafoe', cursive", 400, 0.84),  # its letters run a little taller
+    "Above the Beyond Script": ("'Allura', cursive", 400),
+    "Allura": ("'Allura', cursive", 400),
+    "Bohemia Small Caps": ("'Cormorant SC', Georgia, serif", 600),
+    "Avenir Next": ("'Jost', sans-serif", 400),
+}
+css = ""
+if os.path.exists(SVG_FILE):
+    sv = json.load(open(SVG_FILE))
+    assert len(sv["pages"]) == len(out)
+    rules = []
+    for cls, spec in sv["styles"].items():
+        fam, style, size, fill = spec.split("|")
+        face, weight, *k = FACES[fam]
+        size = round(float(size) * (k[0] if k else 1), 1)
+        rules.append(f".mb-svg .{cls}{{font-family:{face};font-weight:{weight};font-style:{style};font-size:{size:g}px;fill:{fill}}}")
+    css = "".join(rules)
+    for k, svg in enumerate(sv["pages"]):
+        svg = re.sub(r'^<svg [^>]*viewBox="([^"]+)"[^>]*>', r'<svg class="mb-svg" viewBox="\1" aria-hidden="true">', svg)
+        # Drop plain-white background tiles (the page itself is already white).
+        svg = re.sub(r'<g><g transform="[^"]*"><g><g clip-path="url\(#(p\d+c\d+)\)"><defs><clipPath id="\1"><path d="[^"]*"></path></clipPath></defs>'
+                     r'<rect width="[\d.]+" height="[\d.]+" fill="rgba\(255, 255, 255, 1\)"></rect></g></g></g></g>', "", svg)
+        svg = re.sub(r"(<g>)+(</g>)+", lambda m: "" if len(m.group(0)) == 7 * m.group(0).count("<g>") else m.group(0), svg)
+        # Stretch each word to Mixbook's width so the stand-in fonts never reflow the page.
+        svg = svg.replace('" textLength="', '" lengthAdjust="spacingAndGlyphs" textLength="')
+        out[k]["raw"] = svg
+        out[k]["imgs"] = re.findall(r'<image href="([^"]+)"', svg)
+json.dump({"aspect": AR, "css": css, "pages": out}, open(os.path.join(HERE, "book-pages.json"), "w"), ensure_ascii=False, separators=(",", ":"))
 
 # Plain text of every page, in order, for review.
 lines = [f"# The Hearts of Mauna Kea: text of every page\n"]

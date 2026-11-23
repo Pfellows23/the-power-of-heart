@@ -650,8 +650,10 @@ BOOK_WELCOME = """<p class="eyebrow">Welcome</p>
 _bp = json.load(open(os.path.join(OUT, "server", "book-pages.json")))
 BOOK_PAGES = _bp["pages"][:1] + [{"html": BOOK_WELCOME}] + _bp["pages"][1:]
 BOOK_AR = _bp.get("aspect", 1)
+BOOK_CSS = _bp.get("css", "")
 _ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{d}"/></svg>'
-book_preview = f'''<section class="section reader-section">
+book_preview = f'''<style>{BOOK_CSS}</style>
+<section class="section reader-section">
   <div class="wrap">
     <div class="reader-head"><h1>The Hearts of Mauna Kea</h1></div>
     <div class="reader" id="reader" style="--ar: {BOOK_AR}">
@@ -761,7 +763,7 @@ open(os.path.join(OUT, "book-login.html"), "w").write(bl)
 bp = page("book-preview.html", "Book Preview | The Power of Heart", "A page-by-page preview of The Hearts of Mauna Kea.", book_preview)
 bp = bp.replace('<meta name="robots" content="index, follow">', '<meta name="robots" content="noindex, nofollow">')
 # Extra fonts standing in for the book's Mixbook fonts (script titles, small caps)
-bp = bp.replace('<link rel="stylesheet" href="styles.css', '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&family=Bentham&family=Cormorant+SC:wght@500&display=swap">\n<link rel="stylesheet" href="styles.css', 1)
+bp = bp.replace('<link rel="stylesheet" href="styles.css', '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&family=Bentham&family=Bodoni+Moda:opsz,wght@6..96,400&family=Cormorant+SC:wght@500;600&family=Mr+Dafoe&display=swap">\n<link rel="stylesheet" href="styles.css', 1)
 open(os.path.join(OUT, "book-preview.html"), "w").write(bp)
 
 urls = "\n".join(f"  <url><loc>{BASE}/{'' if s == 'index.html' else s}</loc><lastmod>2026-10-30</lastmod></url>" for s, *_ in pages)

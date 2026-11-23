@@ -77,9 +77,12 @@ Every push to `main` redeploys the site automatically.
 ## The book reader (private area)
 book-preview.html is a page-turning copy of The Hearts of Mauna Kea, behind the book sign-in.
 - `server/mixbook-book.json`: the book's layout, exported from the Mixbook share link.
-- `server/mixbook_import.py`: rebuilds every page as HTML from that layout and writes
-  `server/book-pages.json` and `server/book-text.md` (the text of every page).
+- `server/mixbook-svg.json`: Mixbook's own drawing (SVG) of every page, copied from the
+  Mixbook editor preview, so photos and each word sit exactly where they are in the book.
+  Mixbook's fonts are swapped for close Google Fonts (map in `FACES` in the importer).
+- `server/mixbook_import.py`: turns those into `server/book-pages.json` (pages for the
+  reader) and `server/book-text.md` (the text of every page).
 - `server/book-reader.js`: the page-turning (arrows, keyboard, swipe, slider).
 Photos currently load from Mixbook (1400 px). To use the original photos, put them in
-`book-preview-images/` (protected by the same sign-in) and point the `src` values there.
+`book-preview-images/` (protected by the same sign-in) and point the image `href` values there.
 After any change: `python3 server/mixbook_import.py && python3 build.py`.

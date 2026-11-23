@@ -856,6 +856,8 @@ main:has(#hearts-of-hendrys, #in-the-works) .band { height: clamp(180px, 26vw, 3
 .mb-photo img { position: absolute; max-width: none; object-fit: fill; }
 .mb-text { position: absolute; white-space: pre-wrap; overflow-wrap: break-word; }
 .mb-text p { margin: 0; }
+.mb-svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; background: #fff; }
+.mb-svg text { font-variant-numeric: lining-nums; white-space: pre; }
 .reader-section .wrap { --wrap: 112rem; }
 /* phones: the printed text is tiny at phone size, so the page's words are repeated below it */
 .reader-words { display: none; }
