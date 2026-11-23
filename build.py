@@ -206,7 +206,7 @@ home = f'''<section class="hero hero-photo" style="--photo: url('images/ocean-sp
       <p>The first book in The Hearts of… series pairs photographs and sentiments from a special place and time, where the heart-shaped rocks that arrived carried a depth of heartfulness and meaning.</p>
       <div class="actions">
         <a class="btn" href="#request-book">Buy the book</a>
-        <a class="btn btn-ghost" href="book-preview.html">Look inside the book</a>
+        <a class="btn" href="book-preview.html">Look inside the book</a>
       </div>
       <p class="secure-note">The book preview is password protected.</p>
     </div>
@@ -431,7 +431,7 @@ books = f'''<section class="page-hero">
       <h2>Turn the pages</h2>
       <p>Step through the book one spread at a time. The preview is password protected.</p>
     </div>
-    <a class="btn btn-ghost" href="book-preview.html">Look inside the book</a>
+    <a class="btn" href="book-preview.html">Look inside the book</a>
   </div>
   <a class="wrap inside-photo" href="book-preview.html" aria-label="Look inside The Hearts of Mauna Kea">
       <img class="inside-framed" src="images/stone-buddha.jpg" alt="A stone Buddha resting beneath a tree in Hawaiian sunlight" width="1013" height="758" loading="lazy" decoding="async">
