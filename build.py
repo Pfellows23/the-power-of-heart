@@ -639,68 +639,45 @@ inspirations = f'''<section class="page-hero">
 {'' if True else ROCKS_AND_REFLECTIONS}
 {CTA}'''
 
-book_preview = f'''<section class="section book">
-  <div class="wrap stack-lg">
-    <div class="stack measure"><p class="eyebrow">Book preview</p><h1>The Hearts of Mauna Kea</h1></div>
-    <article class="spread" id="p1">
-      {img("coral-heart-in-hand.jpg", "The Hearts of Mauna Kea: a heart-shaped piece of coral held on a sandy beach")}
-      <div class="stack">
-        <p class="lede">On the Kohala Coast of Hawai‘i Island stands the Mauna Kea Beach Hotel, the first of Laurance Rockefeller’s resorts, opened in 1965 on the white crescent of Kauna‘oa Bay and built to honor the land and sea around it.</p>
-        <p>I arrived there in a season of my life when everything was shifting. What followed was a quiet run of serendipity: chance meetings, perfect timing, and heart-shaped stones appearing on the shore as if they had been waiting for me.</p>
-        <p>This book gathers those moments. It is a record of how a rare place, the right time, and the right people can set the unexpected in motion and awaken the soul.</p>
-        <nav class="book-nav" aria-label="Book pages"><span></span><span class="book-count">1 / 7</span><a class="btn btn-small" href="#p2">Next page</a></nav></div>
-    </article>
-    <article class="spread" id="p2">
-      {img("ocean-sparkle.jpg", "Sunlight sparkling across a calm blue sea", "wide")}
-      <div class="stack">
-        <blockquote class="spread-words">[Sentiment from this page.]</blockquote>
-        <dl class="field-note"><dt>Place</dt><dd>[Place]</dd><dt>Heart rock</dt><dd>[Where it arrived]</dd></dl>
-        <nav class="book-nav" aria-label="Book pages"><a class="btn btn-ghost btn-small" href="#p1">Previous</a><span class="book-count">2 / 7</span><a class="btn btn-small" href="#p3">Next page</a></nav>
+# Private book area: a page-turning reader. The page list lives in server/book-pages.json
+# (kept out of the public site); page photos live in book-preview-images/, which sits
+# behind the same sign-in as this page. Page 0 is the cover; {"html": ...} pages are written here.
+BOOK_WELCOME = """<p class="eyebrow">Welcome</p>
+<h2>The Hearts of Mauna Kea</h2>
+<p class="lede">On the Kohala Coast of Hawai‘i Island stands the Mauna Kea Beach Hotel, the first of Laurance Rockefeller’s resorts, opened in 1965 on the white crescent of Kauna‘oa Bay.</p>
+<p>I arrived there in a season of my life when everything was shifting. What followed was a quiet run of serendipity: chance meetings, perfect timing, and heart-shaped stones appearing on the shore as if they had been waiting for me.</p>
+<p>This book gathers those moments. Turn the pages with the arrows, a swipe, or a tap on either side.</p>"""
+_bp = json.load(open(os.path.join(OUT, "server", "book-pages.json")))
+BOOK_PAGES = _bp["pages"][:1] + [{"html": BOOK_WELCOME}] + _bp["pages"][1:]
+BOOK_AR = _bp.get("aspect", 1)
+_ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{d}"/></svg>'
+book_preview = f'''<section class="section reader-section">
+  <div class="wrap">
+    <div class="reader-head"><p class="eyebrow">Inside the book</p><h1>The Hearts of Mauna Kea</h1></div>
+    <div class="reader" id="reader" style="--ar: {BOOK_AR}">
+      <div class="reader-stage">
+        <div class="reader-book" aria-roledescription="book">
+          <div class="reader-page reader-left"></div>
+          <div class="reader-page reader-right"></div>
+        </div>
       </div>
-    </article>
-    <article class="spread" id="p3">
-      {img("golden-water.jpg", "Golden light on ocean waves", "wide")}
-      <div class="stack">
-        <blockquote class="spread-words">[Sentiment from this page.]</blockquote>
-        <dl class="field-note"><dt>Place</dt><dd>[Place]</dd><dt>Heart rock</dt><dd>[Where it arrived]</dd></dl>
-        <nav class="book-nav" aria-label="Book pages"><a class="btn btn-ghost btn-small" href="#p2">Previous</a><span class="book-count">3 / 7</span><a class="btn btn-small" href="#p4">Next page</a></nav>
+      <div class="reader-controls">
+        <button class="reader-arrow reader-prev" type="button" aria-label="Previous page">{_ARROW.format(d="M15 5l-7 7 7 7")}</button>
+        <span class="reader-count">Cover</span>
+        <button class="reader-arrow reader-next" type="button" aria-label="Next page">{_ARROW.format(d="M9 5l7 7-7 7")}</button>
       </div>
-    </article>
-    <article class="spread" id="p4">
-      {img("silver-ocean.jpg", "Silver light on the ocean at the shore", "wide")}
-      <div class="stack">
-        <blockquote class="spread-words">[Sentiment from this page.]</blockquote>
-        <dl class="field-note"><dt>Place</dt><dd>[Place]</dd><dt>Heart rock</dt><dd>[Where it arrived]</dd></dl>
-        <nav class="book-nav" aria-label="Book pages"><a class="btn btn-ghost btn-small" href="#p3">Previous</a><span class="book-count">4 / 7</span><a class="btn btn-small" href="#p5">Next page</a></nav>
-      </div>
-    </article>
-    <article class="spread" id="p5">
-      {img("shoreline-pebbles.jpg", "Stones on wet sand as a wave arrives", "wide")}
-      <div class="stack">
-        <blockquote class="spread-words">[Sentiment from this page.]</blockquote>
-        <dl class="field-note"><dt>Place</dt><dd>[Place]</dd><dt>Heart rock</dt><dd>[Where it arrived]</dd></dl>
-        <nav class="book-nav" aria-label="Book pages"><a class="btn btn-ghost btn-small" href="#p4">Previous</a><span class="book-count">5 / 7</span><a class="btn btn-small" href="#p6">Next page</a></nav>
-      </div>
-    </article>
-    <article class="spread" id="p6">
-      {img("hendrys-beach.jpg", "Hendry's Beach at sunset", "wide")}
-      <div class="stack">
-        <blockquote class="spread-words">[Sentiment from this page.]</blockquote>
-        <dl class="field-note"><dt>Place</dt><dd>[Place]</dd><dt>Heart rock</dt><dd>[Where it arrived]</dd></dl>
-        <nav class="book-nav" aria-label="Book pages"><a class="btn btn-ghost btn-small" href="#p5">Previous</a><span class="book-count">6 / 7</span><a class="btn btn-small" href="#p7">Next page</a></nav>
-      </div>
-    </article>
-    <article class="spread" id="p7">
-      {img("sea-foam.jpg", "White sea foam on the shore", "wide")}
-      <div class="stack">
-        <h2>Continue the journey</h2>
-        <p>The full book holds every place, sentiment, and heart rock.</p>
-        <div class="actions"><a class="btn" href="#request-book">Buy the book</a></div>
-        <nav class="book-nav" aria-label="Book pages"><a class="btn btn-ghost btn-small" href="#p6">Previous</a><span class="book-count">7 / 7</span><a class="btn btn-small" href="books.html">Back to Books</a></nav>
-      </div>
-    </article>
+      <input class="reader-slider" type="range" min="1" max="{len(BOOK_PAGES)}" value="1" aria-label="Go to page">
+      <p class="reader-live visually-hidden" aria-live="polite"></p>
+      <noscript><p class="reader-hint">Please turn on JavaScript to turn the pages.</p></noscript>
+    </div>
+    <div class="reader-foot">
+      <p class="muted">The first edition has sold out. Request a copy and I will be in touch.</p>
+      <div class="actions"><a class="btn btn-small" href="#request-book">Request the book</a><a class="btn btn-ghost btn-small" href="books.html">Back to Books</a></div>
+    </div>
   </div>
-</section>'''
+</section>
+<script>window.BOOK_PAGES = {json.dumps(BOOK_PAGES, ensure_ascii=False).replace("</", "<\\/")};</script>
+<script>{open(os.path.join(OUT, "server", "book-reader.js")).read()}</script>'''
 
 # Hearts of Mauna Kea is sold out: every "Buy the book" button opens this pop-up
 # (CSS-only, via :target, no JavaScript). page() adds it to any page that links to #request-book.
