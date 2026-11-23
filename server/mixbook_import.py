@@ -150,6 +150,13 @@ if os.path.exists(SVG_FILE):
         svg = re.sub(r"(<g>)+(</g>)+", lambda m: "" if len(m.group(0)) == 7 * m.group(0).count("<g>") else m.group(0), svg)
         # Stretch each word to Mixbook's width so the stand-in fonts never reflow the page.
         svg = svg.replace('" textLength="', '" lengthAdjust="spacingAndGlyphs" textLength="')
+        # The words themselves: a picture of each page's text drawn in the book's real fonts
+        # (May Wilde, Didot, ...) in Mixbook's own editor, laid over the page. Those fonts are
+        # licensed to Mixbook, so they can't be served as web fonts; the pictures look exact.
+        ovl = f"book-preview-text/p{k:03d}.webp"
+        if os.path.exists(os.path.join(HERE, "..", ovl)):
+            svg = re.sub(r"<text>.*?</text>", "", svg)
+            svg = svg[: svg.rindex("</svg>")] + f'<image href="{ovl}" width="12953" height="10000"></image></svg>'
         out[k]["raw"] = svg
         out[k]["imgs"] = re.findall(r'<image href="([^"]+)"', svg)
 json.dump({"aspect": AR, "css": css, "pages": out}, open(os.path.join(HERE, "book-pages.json"), "w"), ensure_ascii=False, separators=(",", ":"))
