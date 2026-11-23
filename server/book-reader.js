@@ -17,6 +17,7 @@
   var count = root.querySelector(".reader-count");
   var slider = root.querySelector(".reader-slider");
   var live = root.querySelector(".reader-live");
+  var words = root.querySelector(".reader-words");
   var N = pages.length;
   var mq = window.matchMedia("(min-width: 760px)");
   var two = mq.matches;
@@ -37,15 +38,19 @@
 
   function fill(el, i) {
     el.innerHTML = "";
-    el.className = el.className.replace(/ ?is-(blank|html)/g, "");
+    el.className = el.className.replace(/ ?is-(blank|html|raw)/g, "");
     if (i < 0 || i >= N) { el.className += " is-blank"; return; }
     var p = pages[i];
+    if (p.raw) { el.className += " is-raw"; el.innerHTML = p.raw; return; }
     if (p.html) { el.className += " is-html"; el.innerHTML = '<div class="reader-text">' + p.html + "</div>"; return; }
     var img = document.createElement("img");
     img.src = p.src; img.alt = p.alt || ""; img.decoding = "async"; img.draggable = false;
     el.appendChild(img);
   }
-  function preload(i) { if (i >= 0 && i < N && pages[i].src) { var im = new Image(); im.src = pages[i].src; } }
+  function preload(i) {
+    if (i < 0 || i >= N) return;
+    (pages[i].imgs || (pages[i].src ? [pages[i].src] : [])).forEach(function (u) { var im = new Image(); im.src = u; });
+  }
 
   function label() {
     if (!two) return "Page " + (pos + 1) + " of " + N;
@@ -60,6 +65,7 @@
     book.classList.toggle("is-closed", two && pos === 0);
     book.classList.toggle("is-end", two && pos >= N);
     count.textContent = label();
+    if (words) words.textContent = two ? "" : (pages[pos].text || "");
     slider.value = Math.min(pos, N - 1) + 1;
     prevBtn.disabled = pos <= 0;
     nextBtn.disabled = pos >= last();

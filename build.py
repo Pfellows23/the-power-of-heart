@@ -653,20 +653,19 @@ BOOK_AR = _bp.get("aspect", 1)
 _ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{d}"/></svg>'
 book_preview = f'''<section class="section reader-section">
   <div class="wrap">
-    <div class="reader-head"><p class="eyebrow">Inside the book</p><h1>The Hearts of Mauna Kea</h1></div>
+    <div class="reader-head"><h1>The Hearts of Mauna Kea</h1></div>
     <div class="reader" id="reader" style="--ar: {BOOK_AR}">
       <div class="reader-stage">
         <div class="reader-book" aria-roledescription="book">
           <div class="reader-page reader-left"></div>
           <div class="reader-page reader-right"></div>
         </div>
-      </div>
-      <div class="reader-controls">
         <button class="reader-arrow reader-prev" type="button" aria-label="Previous page">{_ARROW.format(d="M15 5l-7 7 7 7")}</button>
-        <span class="reader-count">Cover</span>
         <button class="reader-arrow reader-next" type="button" aria-label="Next page">{_ARROW.format(d="M9 5l7 7-7 7")}</button>
       </div>
+      <p class="reader-count">Cover</p>
       <input class="reader-slider" type="range" min="1" max="{len(BOOK_PAGES)}" value="1" aria-label="Go to page">
+      <div class="reader-words"></div>
       <p class="reader-live visually-hidden" aria-live="polite"></p>
       <noscript><p class="reader-hint">Please turn on JavaScript to turn the pages.</p></noscript>
     </div>
@@ -761,6 +760,8 @@ open(os.path.join(OUT, "book-login.html"), "w").write(bl)
 # Private book preview: not in the menu, sitemap, or search results.
 bp = page("book-preview.html", "Book Preview | The Power of Heart", "A page-by-page preview of The Hearts of Mauna Kea.", book_preview)
 bp = bp.replace('<meta name="robots" content="index, follow">', '<meta name="robots" content="noindex, nofollow">')
+# Extra fonts standing in for the book's Mixbook fonts (script titles, small caps)
+bp = bp.replace('<link rel="stylesheet" href="styles.css', '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&family=Bentham&family=Cormorant+SC:wght@500&display=swap">\n<link rel="stylesheet" href="styles.css', 1)
 open(os.path.join(OUT, "book-preview.html"), "w").write(bp)
 
 urls = "\n".join(f"  <url><loc>{BASE}/{'' if s == 'index.html' else s}</loc><lastmod>2026-10-30</lastmod></url>" for s, *_ in pages)
