@@ -864,3 +864,6 @@ main:has(#hearts-of-hendrys, #in-the-works) .band { height: clamp(180px, 26vw, 3
 @media (max-width: 759px) {
   .reader-words:not(:empty) { display: block; white-space: pre-line; margin: 1.25rem auto 0; max-width: 34rem; padding: 1.1rem 1.2rem; background: var(--foam); border: 1px solid color-mix(in srgb, var(--driftwood) 22%, transparent); font-family: var(--font-voice); font-size: 1.1rem; line-height: 1.55; }
 }
+
+/* Inspirations: smaller featured film so the low-resolution Benigni clip looks sharper (2026-11-24) */
+.film-feature { max-width: 44rem; }
