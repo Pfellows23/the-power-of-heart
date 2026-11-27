@@ -230,22 +230,6 @@ about = f'''<section class="page-hero about-hero">
   </div>
 </section>
 {HENDRY}
-<section class="section section-sand">
-  <div class="wrap stack-lg">
-    <div class="stack measure">
-      <p class="eyebrow">The lineages behind this work</p>
-      <h2>Many lineages, in support of truth and authenticity</h2>
-    </div>
-    <div class="offers bold-heads">
-      <div class="offer"><h3>Acting</h3><p>A graduate of the Meisner Technique Acting Studio, where the practice is presence itself: listening fully and responding truthfully, moment to moment.</p></div>
-      <div class="offer"><h3>Leadership</h3><p>Training in leading a life and a body of work from clarity and inner alignment, and in helping others do the same.</p></div>
-      <div class="offer"><h3>Transformation</h3><p>Certified in Women's Energetics, the study of the subtle energy that moves through us and how real change takes root.</p></div>
-      <div class="offer"><h3>Yoga</h3><p>More than 1,000 hours of RYT certification, grounded in the body, the breath, and the wisdom traditions of yoga.</p></div>
-      <div class="offer"><h3>Meditation</h3><p>Over ten years of teaching meditation and chakra meditation, guiding people beyond the busy mind and home to their own center.</p></div>
-      <div class="offer"><h3>Buddhism</h3><p>Teachings on awareness, compassion, and the nature of mind, received from teachers within the tradition.</p></div>
-    </div>
-  </div>
-</section>
 <section class="section" id="what-this-work-does">
   <div class="wrap stack-lg">
     <div class="stack measure">
