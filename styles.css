@@ -956,3 +956,26 @@ main:has(.about-hero) .wrap.quote { margin-inline: auto; text-align: center; max
   .orb:first-child { padding: calc(var(--d) * 0.12) calc(var(--d) * 0.12) calc(var(--d) * 0.2); }
   .orb + .orb { padding: calc(var(--d) * 0.2) calc(var(--d) * 0.12) calc(var(--d) * 0.12); }
 }
+
+/* About: one continuous sand background, no white block between sections (2026-11-27) */
+main:has(.about-hero) .section-sand + .section-sand { padding-top: 0; }
+/* Circles: left-aligned bullet list, centered as a block in each circle's open area */
+.orb ul { text-align: left; gap: 0.9rem; }
+.orb li { display: grid; grid-template-columns: 1.1rem 1fr; column-gap: 0.35rem; align-items: baseline; }
+.orb li::before { grid-row: 1 / span 2; margin: 0; font-size: 0.8rem; line-height: 1.4; }
+.orb .t, .orb .d { grid-column: 2; }
+.orb:first-child { padding: 0 calc(var(--d) * 0.26) 0 calc(var(--d) * 0.12); }
+.orb + .orb { padding: 0 calc(var(--d) * 0.1) 0 calc(var(--d) * 0.28); }
+@media (max-width: 640px) {
+  .orb:first-child { padding: calc(var(--d) * 0.1) calc(var(--d) * 0.14) calc(var(--d) * 0.22); }
+  .orb + .orb { padding: calc(var(--d) * 0.22) calc(var(--d) * 0.14) calc(var(--d) * 0.1); }
+}
+.orb:first-child { padding: 0 calc(var(--d) * 0.19) 0 calc(var(--d) * 0.09); }
+.orb + .orb { padding: 0 calc(var(--d) * 0.08) 0 calc(var(--d) * 0.2); }
+.orb ul { width: max-content; max-width: 100%; }
+.orb .t { font-size: clamp(1.08rem, 1.45vw, 1.22rem); }
+.orb .d { font-size: clamp(0.98rem, 1.2vw, 1.06rem); }
+@media (max-width: 640px) {
+  .orb:first-child { padding: calc(var(--d) * 0.1) calc(var(--d) * 0.1) calc(var(--d) * 0.22); }
+  .orb + .orb { padding: calc(var(--d) * 0.22) calc(var(--d) * 0.1) calc(var(--d) * 0.1); }
+}

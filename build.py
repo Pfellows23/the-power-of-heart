@@ -255,7 +255,7 @@ about = f'''<section class="page-hero about-hero">
     <p class="impact-line">I help you feel safe enough to open, and clear enough to live from what you find.</p>
   </div>
 </section>
-<section class="section">
+<section class="section section-sand">
   <div class="wrap quote">
     <p class="eyebrow">My commitment</p>
     <p class="q">These are not my teachings. I have received the empowerments to teach, and my part is to share what has been shared with me.</p>
