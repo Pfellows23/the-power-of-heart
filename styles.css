@@ -979,3 +979,15 @@ main:has(.about-hero) .section-sand + .section-sand { padding-top: 0; }
   .orb:first-child { padding: calc(var(--d) * 0.1) calc(var(--d) * 0.1) calc(var(--d) * 0.22); }
   .orb + .orb { padding: calc(var(--d) * 0.22) calc(var(--d) * 0.1) calc(var(--d) * 0.1); }
 }
+/* Circles: no star icons (2026-11-27) */
+.orb li::before { content: none; display: none; }
+.orb li { grid-template-columns: 1fr; }
+.orb .t, .orb .d { grid-column: 1; }
+/* Circles: delicate fine-line gold ring markers instead of stars */
+.orb li { grid-template-columns: 0.95rem 1fr; column-gap: 0.45rem; }
+.orb .t, .orb .d { grid-column: 2; }
+.orb li::before {
+  content: ""; display: block; grid-row: 1; align-self: center; justify-self: center;
+  width: 7px; height: 7px; border-radius: 50%; border: 1px solid rgba(190, 146, 64, 0.8);
+  box-shadow: 0 0 6px rgba(240, 200, 120, 0.7);
+}
