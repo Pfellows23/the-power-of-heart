@@ -236,14 +236,22 @@ about = f'''<section class="page-hero about-hero">
       <h2>Coming home to yourself</h2>
       <p class="lede">When life feels scattered, stuck between chapters, or lived entirely from the head, this work gives you the felt permission to drop beneath the noise and trust what you find there.</p>
     </div>
-    <ul class="circles" aria-label="What this work brings">
-      <li><h3>Permission to be in transition</h3><p>Unafraid of the in&#8209;between</p></li>
-      <li><h3>Presence</h3><p>Slow down and feel what is true</p></li>
-      <li><h3>Alignment with purpose</h3><p>Work and soul, one direction</p></li>
-      <li><h3>Depth without heaviness</h3><p>Deep work that feels alive</p></li>
-      <li><h3>Practical embodiment</h3><p>A practice to live, not only an epiphany</p></li>
-      <li><h3>Sustainable fuel</h3><p>Enthusiasm is part of the medicine</p></li>
-    </ul>
+    <div class="orbs" aria-label="What this work brings">
+      <div class="orb">
+        <ul>
+          <li><span class="t">Permission to be in transition</span><span class="d">unafraid of the in&#8209;between</span></li>
+          <li><span class="t">Presence</span><span class="d">slow down and feel what is true</span></li>
+          <li><span class="t">Depth without heaviness</span><span class="d">deep work that feels alive</span></li>
+        </ul>
+      </div>
+      <div class="orb">
+        <ul>
+          <li><span class="t">Alignment with purpose</span><span class="d">work and soul, one direction</span></li>
+          <li><span class="t">Practical embodiment</span><span class="d">a practice to live, not only an epiphany</span></li>
+          <li><span class="t">Sustainable fuel</span><span class="d">enthusiasm is part of the medicine</span></li>
+        </ul>
+      </div>
+    </div>
     <p class="impact-line">I help you feel safe enough to open, and clear enough to live from what you find.</p>
   </div>
 </section>

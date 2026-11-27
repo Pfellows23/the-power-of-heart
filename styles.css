@@ -922,3 +922,37 @@ main:has(.about-hero) .page-hero { padding-bottom: clamp(2rem, 4.5vw, 3.25rem); 
 main:has(.about-hero) .band { height: clamp(160px, 22vw, 300px); }
 #what-this-work-does .stack-lg { gap: clamp(1.25rem, 3vw, 2rem); }
 main:has(.about-hero) .wrap.quote { margin-inline: auto; text-align: center; max-width: 46rem; }
+
+/* About: two interlocking circles with ethereal light (replaces six circles, 2026-11-27) */
+.orbs { --d: clamp(300px, 34vw, 400px); display: flex; justify-content: center; align-items: center; margin: 1.5rem auto 0.5rem; }
+.orb {
+  position: relative; width: var(--d); aspect-ratio: 1; border-radius: 50%; flex: none;
+  display: flex; align-items: center; justify-content: center; padding: calc(var(--d) * 0.15);
+  background: radial-gradient(circle at 50% 42%, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.72) 55%, rgba(255,251,240,0.42) 100%);
+  border: 1px solid rgba(226, 190, 120, 0.35);
+  box-shadow: 0 0 22px 2px rgba(255, 236, 196, 0.55), 0 0 70px 18px rgba(246, 210, 140, 0.28), 0 0 140px 40px rgba(250, 226, 180, 0.22), inset 0 0 40px rgba(255, 228, 170, 0.22);
+  animation: orb-breathe 9s ease-in-out infinite;
+}
+.orb + .orb { margin-left: calc(var(--d) * -0.2); animation-delay: -4.5s; }
+@keyframes orb-breathe {
+  0%, 100% { box-shadow: 0 0 22px 2px rgba(255,236,196,0.55), 0 0 70px 18px rgba(246,210,140,0.28), 0 0 140px 40px rgba(250,226,180,0.22), inset 0 0 40px rgba(255,228,170,0.22); }
+  50% { box-shadow: 0 0 30px 4px rgba(255,236,196,0.7), 0 0 90px 26px rgba(246,210,140,0.34), 0 0 170px 54px rgba(250,226,180,0.26), inset 0 0 50px rgba(255,228,170,0.3); }
+}
+@media (prefers-reduced-motion: reduce) { .orb { animation: none; } }
+.orb ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.85rem; text-align: center; position: relative; }
+.orb li { display: flex; flex-direction: column; align-items: center; }
+.orb li::before { content: "✦"; color: rgba(196, 150, 62, 0.75); font-size: 0.6rem; margin-bottom: 0.2rem; }
+.orb .t { font-family: "Cormorant Garamond", serif; font-weight: 600; font-size: clamp(1.15rem, 1.6vw, 1.3rem); line-height: 1.15; letter-spacing: 0.01em; }
+.orb .d { font-family: "Cormorant Garamond", serif; font-style: italic; font-size: clamp(1rem, 1.3vw, 1.1rem); line-height: 1.25; opacity: 0.85; }
+@media (max-width: 640px) {
+  .orbs { --d: min(86vw, 330px); flex-direction: column; }
+  .orb + .orb { margin-left: 0; margin-top: calc(var(--d) * -0.14); }
+  .orb ul { gap: 0.6rem; }
+}
+.orb:first-child { padding-right: calc(var(--d) * 0.24); padding-left: calc(var(--d) * 0.1); }
+.orb + .orb { padding-left: calc(var(--d) * 0.24); padding-right: calc(var(--d) * 0.1); }
+.orb li::before { font-size: 0.75rem; }
+@media (max-width: 640px) {
+  .orb:first-child { padding: calc(var(--d) * 0.12) calc(var(--d) * 0.12) calc(var(--d) * 0.2); }
+  .orb + .orb { padding: calc(var(--d) * 0.2) calc(var(--d) * 0.12) calc(var(--d) * 0.12); }
+}
