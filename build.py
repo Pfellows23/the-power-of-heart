@@ -260,7 +260,25 @@ about = f'''<section class="page-hero about-hero">
     </div>
   </div>
 </section>
-<section class="section section-sand">
+<section class="section section-sand" id="what-this-work-does">
+  <div class="wrap stack-lg">
+    <div class="stack measure">
+      <p class="eyebrow">What this work does</p>
+      <h2>Coming home to yourself</h2>
+      <p class="lede">When life feels scattered, stuck between chapters, or lived entirely from the head, this work gives you the felt permission to drop beneath the noise and trust what you find there.</p>
+    </div>
+    <ul class="impact">
+      <li><h3>Permission to be in transition</h3><p>I have rebuilt my own life more than once: through divorce, as a single mother, and through relocations and changes of career. I am not afraid of the in-between, and in this work you need not be either.</p></li>
+      <li><h3>Presence that slows you down</h3><p>Yoga, meditation, and energy work give your nervous system a lived experience of safety, so you can feel what is true before you try to figure it out.</p></li>
+      <li><h3>Alignment with purpose</h3><p>Rooted in dharma and in years of leadership and mission-driven work, we connect your inner life to what you are building, so your work and your soul stop pulling in different directions.</p></li>
+      <li><h3>Depth without heaviness</h3><p>We go beneath the surface and do not flinch at what is there. Warmth and play keep the deep work alive rather than grim.</p></li>
+      <li><h3>Practical embodiment</h3><p>Insight becomes small, doable steps. You leave with a practice to live, not only an epiphany.</p></li>
+      <li><h3>Sustainable fuel</h3><p>I do this work because it genuinely lights me up, and that enthusiasm is part of the medicine.</p></li>
+    </ul>
+    <p class="impact-line">I help you feel safe enough to open, and clear enough to live from what you find.</p>
+  </div>
+</section>
+<section class="section">
   <div class="wrap quote">
     <p class="eyebrow">My commitment</p>
     <p class="q">These are not my teachings. I have received the empowerments to teach, and my part is to share what has been shared with me.</p>
@@ -268,7 +286,7 @@ about = f'''<section class="page-hero about-hero">
     <p>To that end, my work is simple: to empower, to align, and to create connections that elevate.</p>
   </div>
 </section>
-<section class="section">
+<section class="section section-sand">
   <div class="wrap split">
     <div class="stack">
       <p class="eyebrow">Who this coaching is for</p>
