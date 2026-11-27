@@ -991,3 +991,11 @@ main:has(.about-hero) .section-sand + .section-sand { padding-top: 0; }
   width: 7px; height: 7px; border-radius: 50%; border: 1px solid rgba(190, 146, 64, 0.8);
   box-shadow: 0 0 6px rgba(240, 200, 120, 0.7);
 }
+
+/* About: close remaining gaps (2026-11-27) */
+main:has(.about-hero) .page-hero { padding-bottom: clamp(1.25rem, 3vw, 2rem); }
+main:has(.about-hero) #what-this-work-does { padding-top: clamp(1.75rem, 3.5vw, 2.5rem); }
+main:has(.about-hero) .section-sand + .section-sand { padding-top: 0; }
+#what-this-work-does .orbs { margin-top: 0.5rem; margin-bottom: 0; }
+main:has(.about-hero) .split { grid-template-columns: 1fr; max-width: 46rem; margin-inline: auto; text-align: center; gap: 1rem; }
+main:has(.about-hero) .split .stack { align-items: center; }
