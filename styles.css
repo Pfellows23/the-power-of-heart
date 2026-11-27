@@ -915,3 +915,10 @@ main:has(#hearts-of-hendrys, #in-the-works) .band { height: clamp(180px, 26vw, 3
   .circles h3 { font-size: 1rem; margin-bottom: 0.25rem; }
   .circles p { font-size: 0.76rem; line-height: 1.3; }
 }
+
+/* About: shorter page, less empty space (2026-11-27) */
+main:has(.about-hero) .section { padding-block: clamp(2rem, 4.5vw, 3.25rem); }
+main:has(.about-hero) .page-hero { padding-bottom: clamp(2rem, 4.5vw, 3.25rem); }
+main:has(.about-hero) .band { height: clamp(160px, 22vw, 300px); }
+#what-this-work-does .stack-lg { gap: clamp(1.25rem, 3vw, 2rem); }
+main:has(.about-hero) .wrap.quote { margin-inline: auto; text-align: center; max-width: 46rem; }

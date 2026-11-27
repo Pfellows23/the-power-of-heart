@@ -229,7 +229,6 @@ about = f'''<section class="page-hero about-hero">
     </div>
   </div>
 </section>
-{HENDRY}
 <section class="section section-sand" id="what-this-work-does">
   <div class="wrap stack-lg">
     <div class="stack measure">
