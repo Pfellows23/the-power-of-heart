@@ -875,3 +875,43 @@ main:has(#hearts-of-hendrys, #in-the-works) .band { height: clamp(180px, 26vw, 3
 .impact p { margin: 0; }
 .impact-line { font-family: "Cormorant Garamond", serif; font-style: italic; font-size: clamp(1.35rem, 2.3vw, 1.7rem); text-align: center; max-width: 40rem; margin: 0 auto; }
 @media (max-width: 720px) { .impact { grid-template-columns: 1fr; } }
+
+/* About: interlocking white circles with golden light (2026-11-27) */
+#what-this-work-does .stack-lg { align-items: center; }
+#what-this-work-does .measure { text-align: center; margin-inline: auto; }
+.circles {
+  --d: clamp(190px, 21vw, 240px);
+  list-style: none; margin: 1rem auto 0; padding: 0;
+  display: grid; grid-template-columns: repeat(7, calc(var(--d) * 0.43)); justify-content: center;
+}
+.circles li {
+  width: var(--d); aspect-ratio: 1; border-radius: 50%; justify-self: center; grid-column: span 2;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+  padding: 0 calc(var(--d) * 0.14);
+  background: radial-gradient(circle at 50% 45%, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.78) 62%, rgba(255,250,238,0.6) 100%);
+  border: 1px solid rgba(201, 158, 74, 0.55);
+  box-shadow: 0 0 34px 6px rgba(244, 196, 104, 0.38), inset 0 0 22px rgba(244, 196, 104, 0.18);
+}
+.circles li:nth-child(1) { grid-column: 1 / span 2; grid-row: 1; }
+.circles li:nth-child(2) { grid-column: 3 / span 2; grid-row: 1; }
+.circles li:nth-child(3) { grid-column: 5 / span 2; grid-row: 1; }
+.circles li:nth-child(4) { grid-column: 2 / span 2; grid-row: 2; }
+.circles li:nth-child(5) { grid-column: 4 / span 2; grid-row: 2; }
+.circles li:nth-child(6) { grid-column: 6 / span 2; grid-row: 2; }
+.circles li:nth-child(n+4) { margin-top: calc(var(--d) * -0.14); }
+.circles h3 { font-family: "Cormorant Garamond", serif; font-weight: 600; font-size: clamp(1.1rem, 1.6vw, 1.3rem); line-height: 1.15; margin: 0 0 0.4rem; }
+.circles p { margin: 0; font-size: 0.88rem; line-height: 1.4; }
+@media (max-width: 640px) {
+  .circles { --d: min(46vw, 190px); grid-template-columns: repeat(4, calc(var(--d) * 0.43)); }
+  .circles li:nth-child(1) { grid-column: 1 / span 2; grid-row: 1; }
+  .circles li:nth-child(2) { grid-column: 3 / span 2; grid-row: 1; }
+  .circles li:nth-child(3) { grid-column: 2 / span 2; grid-row: 2; }
+  .circles li:nth-child(4) { grid-column: 1 / span 2; grid-row: 3; }
+  .circles li:nth-child(5) { grid-column: 3 / span 2; grid-row: 3; }
+  .circles li:nth-child(6) { grid-column: 2 / span 2; grid-row: 4; }
+  .circles li:nth-child(n+2) { margin-top: 0; }
+  .circles li:nth-child(n+3) { margin-top: calc(var(--d) * -0.14); }
+  .circles li { padding: 0 calc(var(--d) * 0.12); }
+  .circles h3 { font-size: 1rem; margin-bottom: 0.25rem; }
+  .circles p { font-size: 0.76rem; line-height: 1.3; }
+}
