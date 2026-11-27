@@ -999,3 +999,10 @@ main:has(.about-hero) .section-sand + .section-sand { padding-top: 0; }
 #what-this-work-does .orbs { margin-top: 0.5rem; margin-bottom: 0; }
 main:has(.about-hero) .split { grid-template-columns: 1fr; max-width: 46rem; margin-inline: auto; text-align: center; gap: 1rem; }
 main:has(.about-hero) .split .stack { align-items: center; }
+/* Circles bigger, longer phrases (2026-11-27) */
+.orbs { --d: clamp(340px, 40vw, 500px); }
+.orb .t { font-size: clamp(1.15rem, 1.6vw, 1.38rem); }
+.orb .d { font-size: clamp(1rem, 1.3vw, 1.15rem); }
+.orb ul { gap: 1.05rem; width: auto; }
+@media (max-width: 640px) { .orbs { --d: min(94vw, 380px); } .orb ul { gap: 0.75rem; } }
+.orb .d { text-wrap: balance; }

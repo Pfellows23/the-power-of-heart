@@ -239,20 +239,19 @@ about = f'''<section class="page-hero about-hero">
     <div class="orbs" aria-label="What this work brings">
       <div class="orb">
         <ul>
-          <li><span class="t">Permission to be in transition</span><span class="d">unafraid of the in&#8209;between</span></li>
-          <li><span class="t">Presence</span><span class="d">slow down and feel what is true</span></li>
-          <li><span class="t">Depth without heaviness</span><span class="d">deep work that feels alive</span></li>
+          <li><span class="t">Permission to be in transition</span><span class="d">Held through the in&#8209;between</span></li>
+          <li><span class="t">Presence</span><span class="d">Stillness before answers</span></li>
+          <li><span class="t">Depth without heaviness</span><span class="d">Going beneath the surface, with warmth</span></li>
         </ul>
       </div>
       <div class="orb">
         <ul>
-          <li><span class="t">Alignment with purpose</span><span class="d">work and soul, one direction</span></li>
-          <li><span class="t">Practical embodiment</span><span class="d">a practice to live, not only an epiphany</span></li>
-          <li><span class="t">Sustainable fuel</span><span class="d">enthusiasm is part of the medicine</span></li>
+          <li><span class="t">Alignment with purpose</span><span class="d">Your inner life and your work, moving together</span></li>
+          <li><span class="t">Practical embodiment</span><span class="d">Wisdom you can live;<br>eastern teachings in a western world</span></li>
+          <li><span class="t">Sustainable fuel</span><span class="d">Energy that renews itself</span></li>
         </ul>
       </div>
     </div>
-    <p class="impact-line">I help you feel safe enough to open, and clear enough to live from what you find.</p>
   </div>
 </section>
 <section class="section section-sand">
