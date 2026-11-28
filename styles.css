@@ -1027,3 +1027,6 @@ main:has(.about-hero) .split .stack { align-items: center; }
 .footer-tag { font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 1.15rem; color: #c9c4ba; }
 .footer-links a { font-family: "Cormorant Garamond", serif; text-transform: none; font-variant: small-caps; font-size: 1.15rem; letter-spacing: 0.12em; }
 .footer-contact a { font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 1.1rem; }
+/* Footer fonts: Pamela switched to option C (2026-11-28) */
+.footer-links a { font-family: "Marcellus", serif; font-variant: normal; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.18em; }
+.footer-contact a { font-family: "Marcellus", serif; font-style: normal; font-size: 0.95rem; letter-spacing: 0.04em; }

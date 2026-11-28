@@ -12,7 +12,7 @@ MENU = [("Home", "index.html"), ("About", "about.html"), ("Services", "services.
         ("Projects", [("Books", "books.html"), ("Productions", "productions.html")]), ("Inspirations", "inspirations.html")]
 FOOTER_MENU = [(l, h) for l, h in MENU if isinstance(h, str)][:3] + [("Books", "books.html"), ("Productions", "productions.html"), ("Inspirations", "inspirations.html"), ("Contact", "contact.html")]
 
-FONTS = "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap"
+FONTS = "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&family=Marcellus&display=swap"
 
 WAVE = '<svg class="wave{cls}" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path d="M0,44 C220,78 460,6 720,30 C980,54 1210,12 1440,38 L1440,80 L0,80 Z"/></svg>'
 def wave(cls=""): return ""
