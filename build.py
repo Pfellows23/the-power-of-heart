@@ -140,7 +140,7 @@ PILLARS = '<ul class="pillars" aria-label="What clients move toward"><li>Peace</
 home = f'''<section class="hero hero-photo" style="--photo: url('images/ocean-sparkle.jpg')">
   <div class="wrap hero-grid">
     <div class="hero-text stack-lg">
-      <h1>Ancient wisdom.<br><em>Undiscovered awareness.</em></h1>
+      <h1>Ancient teachings shared with me.<br><em>I share them forward.</em></h1>
     </div>
     <a class="hero-cover" href="books.html" aria-label="The Hearts of Mauna Kea book">
       {img("coral-heart-in-hand.jpg", "The Hearts of Mauna Kea: a heart-shaped piece of coral held on a sandy beach")}
