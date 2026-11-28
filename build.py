@@ -195,9 +195,7 @@ home = f'''<section class="hero hero-photo" style="--photo: url('images/ocean-sp
     </div>
   </div>
 </section>
-{HENDRY}
-
-<section class="section">
+<section class="section" id="home-rocks">
   <div class="wrap split">
     {img("coral-heart-rocks-on-lava.jpg", "White coral hearts resting on black lava rock", "wide")}
     <div class="stack">
