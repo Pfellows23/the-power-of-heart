@@ -1030,3 +1030,10 @@ main:has(.about-hero) .split .stack { align-items: center; }
 /* Footer fonts: Pamela switched to option C (2026-11-28) */
 .footer-links a { font-family: "Marcellus", serif; font-variant: normal; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.18em; }
 .footer-contact a { font-family: "Marcellus", serif; font-style: normal; font-size: 0.95rem; letter-spacing: 0.04em; }
+
+/* Home: larger featured book section (2026-11-28) */
+#home-rocks .wrap.split { grid-template-columns: 1.45fr 1fr; gap: clamp(2rem, 4.5vw, 4rem); }
+#home-rocks .photo.wide { aspect-ratio: 4 / 3; border-radius: 6px; box-shadow: 0 24px 50px -28px rgba(42, 46, 47, 0.55); }
+#home-rocks h2 { font-size: clamp(2rem, 3.4vw, 2.7rem); }
+#home-rocks .stack > p:not(.eyebrow):not(.secure-note) { font-size: clamp(1.05rem, 1.35vw, 1.18rem); line-height: 1.7; }
+@media (max-width: 800px) { #home-rocks .wrap.split { grid-template-columns: 1fr; } }
