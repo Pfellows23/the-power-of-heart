@@ -272,7 +272,8 @@ about = f'''<section class="page-hero about-hero">
     </div>
   </div>
 </section>
-{CTA}'''
+{HENDRY}
+{CTA.replace(FOAM, "", 1)}'''
 
 def product(title, meta, price, text, key, label="Buy now", photo=None, href=None):
     ph = ""
