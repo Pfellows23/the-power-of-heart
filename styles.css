@@ -1022,3 +1022,8 @@ main:has(.about-hero) .split .stack { align-items: center; }
   .footer-contact { text-align: left; }
   .footer-links { gap: 0.45rem 1.1rem; }
 }
+
+/* Footer fonts: option A chosen by Pamela (2026-11-28) */
+.footer-tag { font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 1.15rem; color: #c9c4ba; }
+.footer-links a { font-family: "Cormorant Garamond", serif; text-transform: none; font-variant: small-caps; font-size: 1.15rem; letter-spacing: 0.12em; }
+.footer-contact a { font-family: "Cormorant Garamond", serif; font-style: italic; font-size: 1.1rem; }
