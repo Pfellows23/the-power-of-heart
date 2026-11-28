@@ -514,7 +514,7 @@ def rock(cls, place, note):
 
 # Film clips on the Inspirations page. Paste a YouTube link in place of "" to show the video.
 FILMS = [
-    ("Roberto Benigni on the Ten Commandments", "", "https://youtu.be/EatwzkvOWf4"),
+    ("Roberto Benigni shares the perfect message: Love each other (Amarsi)", "", "https://youtu.be/EatwzkvOWf4"),
     ("[Film title and scene]", "[A line or two on what this scene teaches.]", ""),
 ]
 def more_films():
