@@ -1006,3 +1006,19 @@ main:has(.about-hero) .split .stack { align-items: center; }
 .orb ul { gap: 1.05rem; width: auto; }
 @media (max-width: 640px) { .orbs { --d: min(94vw, 380px); } .orb ul { gap: 0.75rem; } }
 .orb .d { text-wrap: balance; }
+
+/* Footer: compact layout (2026-11-28) */
+#site-footer { padding-block: clamp(1.75rem, 3.5vw, 2.5rem) 1.25rem; }
+.footer-inner { display: grid; grid-template-columns: 1fr auto; grid-template-areas: "brand contact" "links links"; gap: 1.1rem 2.5rem; align-items: start; }
+.footer-inner > div:first-child { grid-area: brand; }
+.footer-links { grid-area: links; flex-direction: row; flex-wrap: wrap; gap: 0.5rem 1.6rem; padding-top: 1rem; border-top: 1px solid rgba(217, 214, 207, 0.14); }
+.footer-links a { font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; }
+.footer-contact { grid-area: contact; text-align: right; gap: 0.25rem; }
+.footer-contact .footer-social:empty { display: none; }
+.footer-tag { max-width: 34rem; }
+.footer-copy { margin-top: 1rem; padding-top: 0; border-top: 0; font-size: 0.75rem; }
+@media (max-width: 700px) {
+  .footer-inner { grid-template-columns: 1fr; grid-template-areas: "brand" "contact" "links"; gap: 0.75rem; }
+  .footer-contact { text-align: left; }
+  .footer-links { gap: 0.45rem 1.1rem; }
+}
